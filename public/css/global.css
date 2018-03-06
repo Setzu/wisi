@@ -1,0 +1,47 @@
+body {
+    padding-top: 70px;
+    background-color: #ededed !important;
+}
+.progress {
+    margin-bottom: 0 !important;
+}
+.pointer {
+    cursor: pointer;
+}
+.header-date {
+    float: left;
+    height: 50px;
+    margin: 0 0 0 20px;
+    padding-top: 15px;
+}
+.cadre-form {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+.title-form {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+table.dataTable.no-footer {
+    border-bottom: 1px solid #c5c5c5 !important;
+}
+td, th {
+    border-color: #c5c5c5 !important;
+}
+li.tab-alert {
+    background-color: #ff0000 !important;
+}
+li.tab-alert:hover {
+    background-color: #DF0101 !important;
+}
+li.tab-alert.ui-tabs-active {
+    border-color: #DF0101;
+}
+li.tab-alert > a {
+    color: #ffffff !important;
+}
+li.ui-tabs-active > a:hover {
+    cursor: pointer !important;
+}

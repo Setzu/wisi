@@ -1,0 +1,15 @@
+{
+  "name": "wisi/composer",
+  "require-dev": {},
+  "authors": [
+    {
+      "name": "david blanchard",
+      "email": "dav.bla28@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Wisi\\": "src/"
+    }
+  }
+}
