@@ -68,4 +68,25 @@ class Job extends JobModel
     {
         return parent::insertJobFollow($aInfosJob);
     }
+
+    /**
+     * @return array
+     */
+    public function verifRequiredJobs()
+    {
+        $aRequiredJobs = $this->selectRequiredJobs();
+
+        if (count($aRequiredJobs) == 0) {
+            return [];
+        }
+
+        $aListFindJobs = [];
+
+        foreach ($aRequiredJobs as $k => $aJobs) {
+            $aListFindJobs[$k]['isExist'] = $this->isJobExists($aJobs);
+            $aListFindJobs[$k]['job'] = $aJobs;
+        }
+
+        return $aListFindJobs;
+    }
 }

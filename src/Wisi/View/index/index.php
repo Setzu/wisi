@@ -47,7 +47,7 @@
             <div class="row" style="text-align: center">
                 <h4>Paramétrage des systèmes</h4>
                 <a href="/system" class="btn btn-default">Ajouter un système</a>
-                <a href="#" class="btn btn-danger">Modifier un système</a>
+                <a href="/system/update" class="btn btn-danger">Modifier un système</a>
             </div>
             <hr>
             <div class="row" style="text-align: center">

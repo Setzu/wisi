@@ -17,8 +17,8 @@ use Wisi\Services\System;
 class IndexController extends AbstractController
 {
 
-    const JOBS_CPU = 'cpu';
-    const JOBS_ASP = 'asp';
+    const ALERT_CPU = 'cpu';
+    const ALERT_ASP = 'asp';
 
     /**
      * @return mixed
@@ -31,6 +31,9 @@ class IndexController extends AbstractController
 
     /**
      * Method for Ajax context
+     *
+     * Récupère la liste des messages QSYSOPR, le pourcentage d'utilisation des disques et diverses infos.
+     * Gestion des alertes
      *
      * @return mixed
      * @throws \Exception
@@ -52,13 +55,27 @@ class IndexController extends AbstractController
                 // Ajout d'une alerte si le % d'utilisation de l'UC est supérieur à 80%
                 if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] > 80) {
                     $alert = 'Le système ' . $aSystem['NMSYS'] . ' est à ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] . " % d'utilisation sur l'ASP 1";
-                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::JOBS_ASP, $alert);
+                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_ASP, $alert);
                 }
 
                 // Ajout d'une alerte si le % d'utilisation du CPU est supérieur à 80%
                 if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] > 80) {
                     $alert = 'Le CPU du système ' . $aSystem['NMSYS'] . ' utilise ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] . ' % de ressources';
-                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::JOBS_CPU, $alert);
+                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_CPU, $alert);
+                }
+
+                $oJob = new Job($aSystem);
+                $aRequiredJobs = $oJob->verifRequiredJobs();
+
+                // Ajout d'une alerte si l'un des job du fichier SSYPR3P0 n'a pas été trouvé dans SSYJBSP0
+                if (is_array($aRequiredJobs) && count($aRequiredJobs) > 0) {
+                    foreach ($aRequiredJobs as $k => $aJobs) {
+                        if (!$aJobs['isExist']) {
+                            $alert = 'Le job ' . $aJobs['job']['JOBNAME'] . " de l'utilisateur " . $aJobs['job']['USERNAME'] .
+                                ' et du sous-système ' . $aJobs['job']['SUBSYSTEM'] . " n'a pas été trouvé dans le fichier SSYJBSP0";
+                            $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], $k, $alert);
+                        }
+                    }
                 }
 
                 $aMainInfos[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
@@ -98,11 +115,6 @@ class IndexController extends AbstractController
                 $aJobsList[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
                 $aJobsList[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
                 $aJobsList[$aSystem['NMSYS']]['SYSPTY'] = $aSystem['SYSPTY'];
-
-                // Ajout d'une alerte si le % d'utilisation de l'UC est supérieur à 80%
-                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] > 80) {
-                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::JOBS_TITLE, 'Le système ' . $aSystem['NMSYS'] . ' est à plus de 80% d\'utilisation sur l\'ASP 1');
-                }
             }
 
             $this->setVariables([

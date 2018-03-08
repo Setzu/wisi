@@ -112,6 +112,8 @@ class ConnectionModel
     }
 
     /**
+     * @TODO : élucider le mystère sur la disparition de la machine MERCER...
+     *
      * @return bool
      */
     public function setConnexion()
@@ -239,8 +241,6 @@ class ConnectionModel
     }
 
     /**
-     * @TODO : élucider le mystère sur la disparition de la machine MERCER...
-     *
      * @return array|bool
      */
     public function selectAllConnections()

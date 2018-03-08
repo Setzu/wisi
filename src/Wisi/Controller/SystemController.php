@@ -33,7 +33,7 @@ class SystemController extends AbstractController
             $bConnectionAlreadyExists = $oConnectionService->isConnectionExists($aPostedDatas['NMSYS']);
 
             if ($bConnectionAlreadyExists) {
-                $this->addFlashMessage('Le système : ' . $aPostedDatas['NMSYS'] . ' existe déjà.');
+                $this->addFlashMessage('Le système : ' . $aPostedDatas['NMSYS'] . ' existe déjà');
 
                 header('Location: /system');
                 exit;
@@ -103,7 +103,7 @@ class SystemController extends AbstractController
      * @return mixed
      * @throws \Exception
      */
-    public function editAction()
+    public function updateAction()
     {
         if (!empty($_POST)) {
             $aPostedDatas = Router::getPostValues();
@@ -111,15 +111,35 @@ class SystemController extends AbstractController
             $bConnectionAlreadyExists = $oConnectionService->isConnectionExists($aPostedDatas['NMSYS']);
 
             if ($bConnectionAlreadyExists) {
-                $this->addFlashMessage('Le système : ' . $aPostedDatas['NMSYS'] . ' existe déjà.');
+                $this->addFlashMessage('Le système : ' . $aPostedDatas['NMSYS'] . ' existe déjà');
 
                 header('Location: /system');
                 exit;
             }
 
+            if (!isset($aPostedDatas['NMSYS'    ]) || strlen($aPostedDatas['NMSYS'    ]) > 10 ||
+                !isset($aPostedDatas['SYSNAME'  ]) || strlen($aPostedDatas['SYSNAME'  ]) > 10 ||
+                !isset($aPostedDatas['IPADR'    ]) || strlen($aPostedDatas['IPADR'    ]) > 15 ||
+                !isset($aPostedDatas['NMUSR'    ]) || strlen($aPostedDatas['NMUSR'    ]) > 10 ||
+                !isset($aPostedDatas['PWUSR'    ]) || strlen($aPostedDatas['PWUSR'    ]) > 10 ||
+                !isset($aPostedDatas['DBNAME'   ]) || strlen($aPostedDatas['DBNAME'   ]) > 20 ||
+                !isset($aPostedDatas['SYSPTY'   ]) || strlen($aPostedDatas['SYSPTY'   ]) > 2  ||
+                (isset($aPostedDatas['SYSTEMTYP']) && strlen($aPostedDatas['SYSTEMTYP']) > 3) ||
+                (isset($aPostedDatas['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 6)
+            ) {
+                $this->addFlashMessage("L'un des champs dépasse la longueur autorisé ou n'a pas été renseigné");
+                header('Location: /system');
+                exit;
+            }
+
+            if (!isset($aSystemInfos['SYSTEMTYP'])) {
+                $aSystemInfos['SYSTEMTYP'] = System::DEFAULT_SYSTEM_TYPE;
+            }
+
             if (!$oConnectionService->addConnection($aPostedDatas)) {
-                $this->addFlashMessage('Le système n\'a pas pu être ajouté. Consultez le fichier de logs pour plus 
-                    de détails.');
+                $this->addFlashMessage("Le système n'a pas pu être ajouté, voir fichier de logs pour plus de détail");
+                header('Location: /jobs');
+                exit;
             } else {
                 $this->addFlashMessage('Le système a bien été ajouté', false);
             }
@@ -127,7 +147,21 @@ class SystemController extends AbstractController
             header('Location: /index');
             exit;
         } else {
-            return $this->render('system');
+            $oConnectionService = new Connection();
+            $aConnectionsList = $oConnectionService->getAllConnections();
+
+            if (is_array($aConnectionsList) && count($aConnectionsList) > 0) {
+
+            } else {
+                $this->addFlashMessage('Aucun système n\'a été trouvé, commencez par en ajouter un');
+
+                header('Location: /index');
+                exit;
+            }
+
+            $this->setVariables(['aConnectionsList' => $aConnectionsList]);
+
+            return $this->render('system', 'update');
         }
     }
 }

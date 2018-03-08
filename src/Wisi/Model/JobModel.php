@@ -106,4 +106,84 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         return true;
     }
+
+    /**
+     * Select all required jobs
+     *
+     * @return array
+     */
+    public function selectRequiredJobs()
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
+        }
+
+        $query = 'SELECT NMSYS, SUBSYSTEM, JOBNAME, USERNAME FROM GFPSYSGES.SSYPR3P0';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
+        }
+
+        try {
+            $stmt->execute();
+            $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
+        }
+
+        return $aResult;
+    }
+
+    /**
+     * @param array $aJobInfos
+     * @return bool
+     */
+    public function isJobExists(array $aJobInfos)
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        $query = 'SELECT count(JOBNAME) FROM GFPSYSGES.SSYJBSP0 
+WHERE NMSYS = :NMSYS AND SUBSYSTEM = :SUBSYSTEM AND JOBNAME = :JOBNAME AND JOBUSER = :JOBUSER';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        try {
+            $stmt->bindParam(':NMSYS', $aJobInfos['NMSYS']);
+            $stmt->bindParam(':SUBSYSTEM', $aJobInfos['SUBSYSTEM']);
+            $stmt->bindParam(':JOBNAME', $aJobInfos['JOBNAME']);
+            $stmt->bindParam(':JOBUSER', $aJobInfos['USERNAME']);
+            $stmt->execute();
+            $bExists = (bool) $stmt->fetch(\PDO::FETCH_COLUMN);
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        return $bExists;
+    }
 }

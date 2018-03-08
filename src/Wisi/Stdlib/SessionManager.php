@@ -116,16 +116,19 @@ abstract class SessionManager
     }
 
     /**
+     * Ajoute des alertes sur le système $system
+     * Veillez à ce que l'$id soit unique afin de s'assurer d'avoir plusieurs alertes sur un même système
+     *
      * @param string $system
      * @param string $alias
-     * @param string $title
+     * @param string|int $id
      * @param string $alert
      */
-    public function addAlert($system, $alias, $title, $alert)
+    public function addAlert($system, $alias, $id, $alert)
     {
         $this->alertsCount ++;
-        $_SESSION[self::ALERTS][$system][$title]['alert'] = $alert;
-        $_SESSION[self::ALERTS][$system][$title]['alias'] = $alias;
+        $_SESSION[self::ALERTS][$system][$id]['alert'] = $alert;
+        $_SESSION[self::ALERTS][$system][$id]['alias'] = $alias;
         $_SESSION[self::ALERTS]['count'] = $this->alertsCount;
     }
 
