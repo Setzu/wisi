@@ -26,7 +26,7 @@ $(function() {
             },
             "search": 'Recherche par mots clés',
             "lengthMenu": 'Afficher _MENU_ messages par page',
-            "sZeroRecords": 'Aucun messages en attente de réponse',
+            "sZeroRecords": 'Aucun message en attente de réponse',
             "sInfoEmpty": '0 message en attente de réponse',
             "sInfoFiltered": '',
             "emptyTable": '',

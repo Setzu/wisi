@@ -90,3 +90,6 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript" src="<?= '/js/add-system.js' ?>"></script>
+<script type="text/javascript" src="<?= '/js/test-connection.js' ?>"></script>

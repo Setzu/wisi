@@ -9,6 +9,8 @@
 namespace Wisi\Model;
 
 
+use Wisi\Services\Logs;
+
 class JobModel extends ConnectionModel
 {
 
@@ -32,6 +34,9 @@ class JobModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
             return [];
         }
 
@@ -39,21 +44,22 @@ class JobModel extends ConnectionModel
 FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORDER BY PROCESSUNT DESC FETCH FIRST 3 ROWS ONLY';
 
         if (!$stmt = $con->prepare($query)) {
-            return null;
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
         }
 
         try {
             $sStatus = self::DEFAULT_STATUS;
             $sUser = self::DEFAULT_USER;
-
             $stmt->bindParam(':JOBSTATUS', $sStatus);
             $stmt->bindParam(':JOBUSER', $sUser);
             $stmt->execute();
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            // @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $error = $e->getMessage();
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
@@ -62,41 +68,42 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
     }
 
     /**
-     * @TODO : en attente de la création du fichier
-     *
      * @param array $aInfosJob
      * @return bool
      */
-    public function addJobFollow(array $aInfosJob)
+    public function insertJobFollow(array $aInfosJob)
     {
-        /*
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
             return false;
         }
 
-        $query = 'INSERT INTO GFPSYSGES. () VALUES (:, :, :, :)';
+        $query = 'INSERT INTO GFPSYSGES.SSYPR3P0 (NMSYS, SUBSYSTEM, JOBNAME, USERNAME) VALUES (:NMSYS, :SUBSYSTEM, :JOBNAME, :USERNAME)';
 
         if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
             return false;
         }
 
         try {
-            $stmt->bindParam(':', $aInfosJob['system']);
-            $stmt->bindParam(':', $aInfosJob['sub-system']);
-            $stmt->bindParam(':', $aInfosJob['name']);
-            $stmt->bindParam(':', $aInfosJob['user']);
+            $stmt->bindParam(':NMSYS', $aInfosJob['system']);
+            $stmt->bindParam(':SUBSYSTEM', $aInfosJob['sub-system']);
+            $stmt->bindParam(':JOBNAME', $aInfosJob['name']);
+            $stmt->bindParam(':USERNAME', $aInfosJob['user']);
             $stmt->execute();
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            // @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $error = $e->getMessage();
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
 
         return true;
-        */
     }
 }

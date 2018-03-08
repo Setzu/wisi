@@ -66,6 +66,6 @@ class Job extends JobModel
      */
     public function addJobFollow(array $aInfosJob)
     {
-        return parent::addJobFollow($aInfosJob);
+        return parent::insertJobFollow($aInfosJob);
     }
 }

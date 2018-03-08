@@ -31,26 +31,14 @@ class Connection extends ConnectionModel
      */
     public function addConnection(array $aSystemInfos)
     {
-        if (!array_key_exists('NMSYS',     $aSystemInfos) || $aSystemInfos['NMSYS']     > 10 ||
-            !array_key_exists('SYSNAME',   $aSystemInfos) || $aSystemInfos['SYSNAME']   > 10 ||
-            !array_key_exists('IPADR',     $aSystemInfos) || $aSystemInfos['IPADR']     > 15 ||
-            !array_key_exists('NMUSR',     $aSystemInfos) || $aSystemInfos['NMUSR']     > 10 ||
-            !array_key_exists('PWUSR',     $aSystemInfos) || $aSystemInfos['PWUSR']     > 10 ||
-            !array_key_exists('DBNAME',    $aSystemInfos) || $aSystemInfos['DBNAME']    > 20 ||
-            !array_key_exists('SYSPTY',    $aSystemInfos) || $aSystemInfos['SYSPTY']    > 2  ||
-            (array_key_exists('SYSTEMTYP', $aSystemInfos) && $aSystemInfos['SYSTEMTYP'] > 3) ||
-            (array_key_exists('COLOR',     $aSystemInfos) && $aSystemInfos['COLOR']     > 6)) {
+        $aPriority = $this->selectHigherPriority($aSystemInfos['SYSPTY']);
 
-            return false;
+        if (is_array($aPriority) && count($aPriority) > 0) {
+            foreach ($aPriority as $aValues) {
+                $this->updatePriorityBySystemAndPriority($aValues['NMSYS'], $aValues['SYSPTY'] + 1);
+            }
         }
 
-        if (!array_key_exists('SYSTEMTYP', $aSystemInfos) || empty($aSystemInfos['SYSTEMTYP'])) {
-            $aSystemInfos['SYSTEMTYP'] = self::DEFAULT_SYSTEM_TYPE;
-        }
-
-        // En cas d'ajout d'une authentification :
-//        $aSystemInfos['PWUSR'] = password_hash($aSystemInfos['PWUSR'], PASSWORD_BCRYPT);
-        // Temporairement on utilise un encodage pas très secure...
         $aSystemInfos['PWUSR']  = base64_encode($aSystemInfos['PWUSR']);
         $aSystemInfos['SYSPTY'] = (int) $aSystemInfos['SYSPTY'];
 
@@ -82,4 +70,5 @@ class Connection extends ConnectionModel
     {
         return parent::isConnectionExists($sSystemName);
     }
+
 }

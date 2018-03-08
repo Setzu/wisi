@@ -41,17 +41,18 @@ class JobController extends AbstractController
 
             $aPostedDatas = Router::getPostValues();
 
-            if (!array_key_exists('system', $aPostedDatas) || empty($aPostedDatas['system']) ||
-                !array_key_exists('sub-system', $aPostedDatas) || empty($aPostedDatas['sub-system']) ||
-                !array_key_exists('name', $aPostedDatas) || empty($aPostedDatas['name']) ||
-                !array_key_exists('user', $aPostedDatas) || empty($aPostedDatas['user'])
+            // On ne devrait jamais rentrer dans ce if, sauf si un user s'amuse à modifier le contenu html
+            if (!isset($aPostedDatas['system'    ]) || strlen($aPostedDatas['system'    ]) > 10 ||
+                !isset($aPostedDatas['sub-system']) || strlen($aPostedDatas['sub-system']) > 10 ||
+                !isset($aPostedDatas['name'      ]) || strlen($aPostedDatas['name'      ]) > 10 ||
+                !isset($aPostedDatas['user'      ]) || strlen($aPostedDatas['user'      ]) > 10
             ) {
-                $this->setFlashMessage('Veuillez renseigner TOUS les champs');
+                $this->addFlashMessage('Un ou plusieurs champs dépassent la longueur maximale autorisé ou n\'ont pas été renseignés');
 
-                header('Location: /job');
+                header('Location: /jobs');
                 exit;
             } elseif (!in_array($aPostedDatas['system'], $aSystemsList)) {
-                $this->setFlashMessage('Le système choisi n\'est pas référencé');
+                $this->addFlashMessage('Le système choisi n\'est pas référencé');
 
                 header('Location: /job');
                 exit;
@@ -61,14 +62,13 @@ class JobController extends AbstractController
             $bReturn = $oJob->addJobFollow($aPostedDatas);
 
             if ($bReturn) {
-                $this->setFlashMessage('Le suivi du job a été ajouté avec succès. Une alerte sera ajoutée dans l\'onglet
-                 Alerte si le job ne figure pas dans le fichier SSYJBSP0.', false);
+                $this->addFlashMessage('Le suivi du job a été ajouté avec succès. Une alerte sera ajoutée dans l\'onglet
+                 Alertes si le job ne figure pas dans le fichier SSYJBSP0.', false);
 
                 header('Location: /index');
                 exit;
             } else {
-                // @TODO: ajouter appel à fonction d'enregistrement de log
-                $this->setFlashMessage('Le suivi du job n\'a pas pu être ajouté. Consultez le fichier de logs pour
+                $this->addFlashMessage('Le suivi du job n\'a pas pu être ajouté. Consultez le fichier de logs pour
                 plus de détails.');
 
                 header('Location: /job');

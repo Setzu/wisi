@@ -28,19 +28,19 @@
             <div class="form-group">
                 <label for="sub-system" class="col-sm-4 control-label">Sous-système :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="sub-system" required="required" placeholder="" class="form-control">
+                    <input type="text" name="sub-system" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="name" class="col-sm-4 control-label">Nom du job :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="name" required="required" placeholder="" class="form-control">
+                    <input type="text" name="name" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="user" class="col-sm-4 control-label">Utilisateur du job :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="user" required="required" placeholder="" class="form-control">
+                    <input type="text" name="user" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">

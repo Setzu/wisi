@@ -9,6 +9,8 @@
 namespace Wisi\Model;
 
 
+use Wisi\Services\Logs;
+
 class SystemModel extends ConnectionModel
 {
 
@@ -31,6 +33,9 @@ class SystemModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
             return [];
         }
 
@@ -38,15 +43,15 @@ class SystemModel extends ConnectionModel
 
         try {
             if (!$stmt = $con->query($query)) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
@@ -54,8 +59,7 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $error = $e->getMessage();
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
@@ -74,19 +78,19 @@ class SystemModel extends ConnectionModel
             return [];
         }
 
-        $query = 'SELECT PCPROCUNTU, PCSYSASPUS, TOTAUXSTG FROM GFPSYSGES.SSYS02P0';
+        $query = 'SELECT PCPROCUNTU, PCSYSASPUS FROM GFPSYSGES.SSYS02P0';
 
         try {
             if (!$stmt = $con->query($query)) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
@@ -94,8 +98,8 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-//            @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $error = $e->getMessage();
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
 
             return [];
         }

@@ -41,11 +41,32 @@ class System extends SystemModel
         $aUCUtilisation = parent::selectUCUtilisation();
 
         if (is_array($aUCUtilisation) && array_key_exists(0, $aUCUtilisation)) {
-            $aUCUtilisation['sASPUtilisation'] = number_format(($aUCUtilisation[0]['PCSYSASPUS'] * 100) / $aUCUtilisation[0]['TOTAUXSTG'], 2);
+            $aUCUtilisation['sASPUtilisation'] = number_format($aUCUtilisation[0]['PCSYSASPUS'] / 10000, 2);
+            $aUCUtilisation['sCPUUtilisation'] = number_format($aUCUtilisation[0]['PCPROCUNTU'] / 10, 2);
         } else {
             return [];
         }
 
         return $aUCUtilisation;
+    }
+
+    /**
+     * @param $UCValue
+     * @return string
+     */
+    public static function storageClassByUC($UCValue)
+    {
+        $iUCValue = (int) $UCValue;
+        $class = 'info';
+
+        if ($iUCValue >= 40 && $iUCValue < 60) {
+            $class = 'success';
+        } elseif ($iUCValue >= 60 && $iUCValue < 80) {
+            $class = 'warning';
+        } elseif ($iUCValue >= 80) {
+            $class = 'danger';
+        }
+
+        return $class;
     }
 }

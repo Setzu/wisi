@@ -13,9 +13,11 @@ abstract class SessionManager
 {
 
     public $aFlashMessages = [];
+    public $alertsCount = 0;
 
     const DEFAULT_EXPIRATION_TIME = 60;
     const FLASH_MESSAGE = 'flashmessage';
+    const ALERTS = 'alerts';
     const DANGER = 'danger';
     const SUCCESS = 'success';
     const ICON_DANGER = 'glyphicon-remove';
@@ -52,14 +54,6 @@ abstract class SessionManager
     }
 
     /**
-     * Destroy the session
-     */
-    public function destroySession()
-    {
-        session_destroy();
-    }
-
-    /**
      * Unset the key $key in session
      *
      * @param $key
@@ -83,7 +77,7 @@ abstract class SessionManager
      * @param bool|true $error
      * @throws \Exception
      */
-    public function setFlashMessage($message, $error = true)
+    public function addFlashMessage($message, $error = true)
     {
         if ($error) {
             $type = self::DANGER;
@@ -119,5 +113,45 @@ abstract class SessionManager
         unset($_SESSION[self::FLASH_MESSAGE]);
 
         return $sFlashMessages;
+    }
+
+    /**
+     * @param string $system
+     * @param string $alias
+     * @param string $title
+     * @param string $alert
+     */
+    public function addAlert($system, $alias, $title, $alert)
+    {
+        $this->alertsCount ++;
+        $_SESSION[self::ALERTS][$system][$title]['alert'] = $alert;
+        $_SESSION[self::ALERTS][$system][$title]['alias'] = $alias;
+        $_SESSION[self::ALERTS]['count'] = $this->alertsCount;
+    }
+
+    /**
+     * Display all alerts
+     */
+    public static function alerts()
+    {
+        $sAlerts = '';
+
+        if (isset($_SESSION[self::ALERTS])) {
+            $sAlerts = "<table class='table'><thead><tr><th>Système</th><th>Alias</th><th>Alerte</th></tr></thead><tbody>";
+
+            foreach ($_SESSION[self::ALERTS] as $system => $v) {
+                if (is_array($v)) {
+                    foreach($v as $title => $aValues) {
+                        $sAlerts .= "<tr><td>" . $system . "</td><td>" . $aValues['alias'] . "</td><td>" . $aValues['alert'] . "</td></tr>";
+                    }
+                }
+            }
+
+            $sAlerts .= "</tbody></table>";
+        }
+
+        unset($_SESSION[self::ALERTS]);
+
+        return $sAlerts;
     }
 }

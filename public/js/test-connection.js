@@ -23,7 +23,10 @@ $(function () {
                     $('#connect-error').html("<h4 class='alert-success' style='border: 2px solid #d6e9c6;'>Connexion réussie.</h4>");
                     $('#test-connection').prop('disabled', true);
                     $('button#add-system').prop('disabled', false);
-                    _connectSystemInputs.prop('disabled', true);
+                    _connectSystemInputs.prop('readonly', true);
+                    _connectSystemInputs.focus(function () {
+                        $(this).blur();
+                    })
                 } else {
                     $('#system-con').removeClass('glyphicon-refresh').addClass('glyphicon-remove');
                     $('#connect-error').html("<h4 class='alert-danger' style='border: 2px solid #ebccd1;'>La connexion au système a échouée. Vérifiez les informations de connexion.</h4>");

@@ -23,7 +23,7 @@ $(function() {
                             {x: 3, y: parseInt(v.BATJOBSRUN), label: "Running"},
                             {x: 4, y: parseInt(v.BATJBSHRUN), label: "Hold"},
                             {x: 5, y: parseInt(v.BATJHLDJBQ), label: "Hold JobQ"},
-                            {x: 6, y: parseInt(v.BATJBQHLD), label: "On hold JobQ"},
+                            {x: 6, y: parseInt(v.BATJBQHLD), label: "On JobQ hold"},
                             {x: 7, y: parseInt(v.BATJBUNAJQ), label: "Unassigned JobQ"},
                             {x: 8, y: parseInt(v.BATENDWPRT) / 1000, label: "Ended OutQ"}
                         ]

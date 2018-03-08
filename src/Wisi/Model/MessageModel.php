@@ -9,6 +9,8 @@
 namespace Wisi\Model;
 
 
+use Wisi\Services\Logs;
+
 class MessageModel extends ConnectionModel
 {
 
@@ -29,33 +31,27 @@ class MessageModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            // @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
 
-        $query = 'SELECT * FROM GFPSYSGES.SSYQSOP0 WHERE MESSAGESTP > :MESSAGESTP';
-//        $query = 'SELECT * FROM GFPSYSGES.MSGQSOP0 WHERE MESSAGESTP > :MESSAGESTP';
+        $query = 'SELECT * FROM GFPSYSGES.SSYQSOP0';
 
         if (!$stmt = $con->prepare($query)) {
-            // @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $con->errorInfo();
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
 
-        // @TODO : à dégager
-        $sTime = '2018-02-22';
-
         try {
-            $stmt->bindParam(':MESSAGESTP', $sTime);
             $stmt->execute();
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            // @TODO : créer fichier de logs puis insérer les infos liées à l'erreur de connexion
-//            $error = $e->getMessage();
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }

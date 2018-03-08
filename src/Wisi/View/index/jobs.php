@@ -26,16 +26,11 @@
                 </tr>
                 </thead>
                 <tbody id="tbody-jobs">
-                <?php foreach ($this->aJobs as $machine => $aJobs) { ?>
+                <?php foreach ($this->aJobs as $aJobs) { ?>
                     <?php if (is_array($aJobs) && array_key_exists('jobs', $aJobs) && is_array($aJobs['jobs'])) { ?>
                         <?php foreach ($aJobs['jobs'] as $v) { ?>
                             <tr style="background-color: <?= '#' . $aJobs['COLOR']; ?>">
-                                <td>
-                                    <span style="color: <?= '#' . $aJobs['COLOR']; ?>;">
-                                        <?= $aJobs['SYSPTY']; ?>
-                                    </span>
-                                    <?= $aJobs['SYSNAME']; ?>
-                                </td>
+                                <td><span style="color: <?= '#' . $aJobs['COLOR']; ?>"><?= $aJobs['SYSPTY']; ?></span><?= $aJobs['SYSNAME']; ?></td>
                                 <td><?= $v['JOBNAME']; ?></td>
                                 <td><?= $v['JOBUSER']; ?></td>
                                 <td><?= $v['JOBNUMBER']; ?></td>

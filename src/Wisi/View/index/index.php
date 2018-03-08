@@ -12,8 +12,10 @@
         <ul>
             <li><a id="link-tab1" href="#tabs-1">GFP Power - Main</a></li>
             <li><a id="link-tab2" href="#tabs-2">GFP Power - Jobs</a></li>
-            <?php if (isset($this->aAlertes)) { ?>
-                <li class="tab-alert"><a id="link-tab3" href="#tabs-3">Alertes</a></li>
+            <?php if (isset($_SESSION['alerts']) && is_array($_SESSION['alerts'])) { ?>
+                <li class="tab-alert">
+                    <a id="alert" href="#tabs-3"><?= $_SESSION['alerts']['count']; ?>&nbsp;Alertes</a>
+                </li>
             <?php } ?>
             <li><a href="#tabs-4">Paramétrage</a></li>
         </ul>
@@ -29,9 +31,11 @@
             <img src="<?= '/img/ajax-loader.gif'; ?>" alt="loader">
         </span>
         </div>
-        <?php if (isset($this->aAlertes)) { ?>
-            <!-- Contenu chargé en ajax (jobs.php)-->
-            <div id="tabs-3"></div>
+        <?php if (isset($_SESSION['alerts']) && is_array($_SESSION['alerts'])) { ?>
+            <div id="tabs-3">
+                <h4>Liste des alertes</h4>
+                <?= \Wisi\Stdlib\SessionManager::alerts(); ?>
+            </div>
         <?php } ?>
         <div id="tabs-4">
             <div class="row" style="text-align: center">
@@ -41,16 +45,9 @@
             </div>
             <hr>
             <div class="row" style="text-align: center">
-                <h4>Paramétrage des messages QSYSOPR</h4>
-                <a href="#" class="btn btn-danger">Messages</a>
-            </div>
-            <hr>
-            <div class="row" style="text-align: center">
                 <h4>Paramétrage des systèmes</h4>
                 <a href="/system" class="btn btn-default">Ajouter un système</a>
                 <a href="#" class="btn btn-danger">Modifier un système</a>
-                <a href="#" class="btn btn-danger">Modifier les couleurs système</a>
-                <a href="#" class="btn btn-danger">Modifier les priorités système</a>
             </div>
             <hr>
             <div class="row" style="text-align: center">
@@ -60,3 +57,24 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="<?= '/js/tab.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/js/load-messages.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/js/load-jobs.js'; ?>"></script>
+
+<!-- Rafraîchissement de la page si inictivité pendant 30 secondes-->
+<script type="text/javascript">
+    $(function(seconds) {
+        var refresh,
+            intvrefresh = function() {
+                clearInterval(refresh);
+                refresh = setTimeout(function() {
+                    location.href = location.href;
+                }, seconds * 1000);
+            };
+
+        $(document).on('keypress click mousemove', function() { intvrefresh() });
+        intvrefresh();
+
+    }(30));
+</script>

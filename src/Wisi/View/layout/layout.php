@@ -12,12 +12,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!--    <meta http-equiv="refresh" content="30; URL=http://wisi.local">-->
     <link rel="icon" href="<?= '/img/favicon.png'; ?>"/>
+
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="<?= '/css/global.css'; ?>">
     <link rel="stylesheet" type="text/css" href="<?= '/css/lib/jquery.dataTables.min.css'; ?>">
     <link rel="stylesheet" type="text/css" href="<?= '/css/lib/jquery-ui.min.css'; ?>">
     <link rel="stylesheet" type="text/css" href="<?= '/css/lib/bootstrap.min.css'; ?>">
+
+    <!-- JS -->
+    <script type="text/javascript" src="<?= '/js/lib/jquery-3.3.1.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/js/lib/jquery-ui.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/js/lib/jquery.canvasjs.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/js/lib/jquery-dataTables.min.js'; ?>"></script>
 </head>
 
 <body>
@@ -44,18 +51,7 @@
     } ?>
 </div>
 
-<footer>
-    <script type="text/javascript" src="<?= '/js/lib/jquery-3.3.1.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/lib/jquery-ui.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/lib/jquery.canvasjs.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/lib/jquery-dataTables.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/tab.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/load-messages.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/load-jobs.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/test-connection.js' ?>"></script>
-    <script type="text/javascript" src="<?= '/js/add-system.js' ?>"></script>
-</footer>
+<footer></footer>
 
 </body>
-
 </html>
