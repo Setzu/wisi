@@ -111,7 +111,7 @@ class IndexController extends AbstractController
             // On récupère les 3 jobs les plus gourmands en ressources (hors jobs QSYS) de chaques systèmes
             foreach ($aConnectionsList as $aSystem) {
                 $oJob = new Job($aSystem);
-                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getThreeLastJobs();
+                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getHigherProcessUnitJobs(5);
                 $aJobsList[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
                 $aJobsList[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
                 $aJobsList[$aSystem['NMSYS']]['SYSPTY'] = $aSystem['SYSPTY'];

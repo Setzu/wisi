@@ -60,7 +60,8 @@ class SystemController extends AbstractController
 
             if (!$oConnectionService->addConnection($aPostedDatas)) {
                 $this->addFlashMessage("Le système n'a pas pu être ajouté, voir fichier de logs pour plus de détail");
-                header('Location: /jobs');
+
+                header('Location: /system');
                 exit;
             } else {
                 $this->addFlashMessage('Le système a bien été ajouté', false);
@@ -173,7 +174,7 @@ class SystemController extends AbstractController
     }
 
     /**
-     * @TODO : à terminer
+     * Method for Ajax context
      *
      * @throws \Exception
      */
@@ -185,7 +186,7 @@ class SystemController extends AbstractController
 
             if (!isset($aPostedDatas['nmsys']) || strlen($aPostedDatas['nmsys']) > 10 ) {
                 echo 'false';
-                return;
+                return false;
             }
 
             $oConnectionService = new Connection();
@@ -195,7 +196,7 @@ class SystemController extends AbstractController
                 $this->addFlashMessage('Le système : ' . $aPostedDatas['nmsys'] . ' n\'existe pas');
 
                 echo 'false';
-                return;
+                return false;
             }
 
             $oSystem = new System();
@@ -203,13 +204,14 @@ class SystemController extends AbstractController
             if (!$oSystem->deleteSystemByName($aPostedDatas['nmsys'])) {
                 $this->addFlashMessage('Le système n\'a pas pu être supprimé. Consultez le fichier de logs pour plus de détails');
 
+                echo 'false';
                 return false;
             }
 
             $this->addFlashMessage('Le système a bien été supprimé', false);
 
             echo 'true';
-            return;
+            return true;
         } else {
             header('Location: /index');
             exit;
@@ -218,10 +220,12 @@ class SystemController extends AbstractController
 
     /**
      * Method for Ajax context
+     *
+     * @throws \Exception
      */
     public function loadInfosAction()
     {
-        if (!empty($_POST) && array_key_exists('select', $_POST)) {
+        if (!empty($_POST)) {
             $aPostedDatas = Router::getPostValues();
 
             if (!isset($aPostedDatas['select'])) {
@@ -245,7 +249,7 @@ class SystemController extends AbstractController
             }
 
             echo json_encode($aInfosSystems);
-            return;
+            return true;
         } else {
             header('Location: /index');
             exit;

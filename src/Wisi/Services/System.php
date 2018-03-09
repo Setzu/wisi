@@ -19,6 +19,7 @@ class System extends SystemModel
     /**
      * Systems constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {
@@ -77,8 +78,7 @@ class System extends SystemModel
     public function getInfosSystemByName($sSystemName)
     {
         if (!is_string($sSystemName) || empty($sSystemName)) {
-            Logs::add('Le paramètre doit être un chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
-
+            Logs::add('Le paramètre doit être une chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
             return [];
         }
 

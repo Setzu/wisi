@@ -17,14 +17,15 @@ class ConnectionModel
     const DEFAULT_DESCRIPTION = 'Ajouté depuis wisi';
 
     protected $connexion;
-    private $database = 'D6022b34';
-    private $host = 'S65ff17d';
-    private $user = 'GFPADM';
-    private $password = 'GFPADM40';
+    private $database;
+    private $host;
+    private $user;
+    private $password;
 
     /**
      * ConnectionPDO constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {
@@ -33,6 +34,18 @@ class ConnectionModel
             $this->setHost($aSystemInfos['IPADR']);
             $this->setUser($aSystemInfos['NMUSR']);
             $this->setPassword(base64_decode($aSystemInfos['PWUSR']));
+        } else {
+
+            if (!file_exists(__DIR__ . '/../../../config/bdd.php')) {
+                throw new \Exception('Le fichier de configuration da la BDD est introuvable');
+            }
+
+            $bddConf = require __DIR__ . '/../../../config/bdd.php';
+
+            $this->setDatabase($bddConf['db2']['database']);
+            $this->setHost($bddConf['db2']['host']);
+            $this->setUser($bddConf['db2']['user']);
+            $this->setPassword($bddConf['db2']['password']);
         }
 
         $this->setConnexion();
@@ -120,17 +133,17 @@ class ConnectionModel
     {
         $this->connexion = '';
 
-        $aConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
-            $this->getHost() . ';PROTOCOL=TCPIP;UID=' . $this->getUser() . ';PWD= ' . $this->getPassword() . ';NAM=1;';
+        $sConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
+            $this->getHost() . ';PROTOCOL=TCPIP;UID=' . $this->getUser() . ';PWD=' . $this->getPassword() . ';NAM=1;';
 //        $aConnectionParams = "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=" . $this->getHost() . ";PORT=50000;DATABASE=" .
 //            $this->getDatabase() . ";PROTOCOL=TCPIP;UID=" . $this->getUser() . ";PWD=" . $this->getPassword() . ";";
 
         try {
-            // Limitation à quelques secondes car si, pour une raison ou une autre, la connexion a un système ne se fait
-            // pas, l'ajax mettra 30 secondes à rafraichir le contenu de l'index
+            // Limitation à quelques secondes pour éviter les timeout
             set_time_limit(3);
-            $this->connexion = new \PDO($aConnectionParams, $this->getUser(), $this->getPassword(), [\PDO::ATTR_PERSISTENT => true]);
+            $this->connexion = new \PDO($sConnectionParams, $this->getUser(), $this->getPassword(), [\PDO::ATTR_PERSISTENT => true]);
         } catch (\PDOException $e) {
+            Logs::add('Paramètre de connection à PDO : ' . $sConnectionParams);
             Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;

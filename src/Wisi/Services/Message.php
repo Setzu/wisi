@@ -26,6 +26,7 @@ class Message extends MessageModel
     /**
      * Messages constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {

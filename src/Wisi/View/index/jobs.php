@@ -10,12 +10,12 @@
 <div class="row">
     <div class="col-md-12">
         <?php if (isset($this->aJobs) && is_array($this->aJobs)) { ?>
-            <h4>Liste des travaux</h4>
+            <h4>Liste des jobs</h4>
 
             <table id="jobs" class="table table-condensed">
                 <thead>
                 <tr>
-                    <th>Système</th>
+                    <th>Priorité</th>
                     <th>Nom</th>
                     <th>Utilisateur</th>
                     <th>Numéro</th>

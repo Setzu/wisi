@@ -41,6 +41,7 @@
             <div class="row" style="text-align: center">
                 <h4>Paramétrage des jobs</h4>
                 <a href="/job" class="btn btn-default">Suivre un job</a>
+                <a href="/job/display" class="btn btn-default">Affichage des jobs</a>
             </div>
             <hr>
             <div class="row" style="text-align: center">

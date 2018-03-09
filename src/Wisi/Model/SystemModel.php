@@ -19,6 +19,7 @@ class SystemModel extends ConnectionModel
     /**
      * ParametrageModel constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {

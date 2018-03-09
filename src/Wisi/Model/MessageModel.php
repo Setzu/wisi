@@ -17,6 +17,7 @@ class MessageModel extends ConnectionModel
     /**
      * MessagesModel constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {

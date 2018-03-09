@@ -17,6 +17,7 @@ class Job extends JobModel
     /**
      * Job constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {
@@ -24,20 +25,34 @@ class Job extends JobModel
     }
 
     /**
+     * Si la quantité est égale à 0, on récupère au moins un résultat
+     *
+     * @param int $quantity
      * @return array
      */
-    public function getThreeLastJobs()
+    public function getHigherProcessUnitJobs($quantity)
     {
-        return parent::selectThreeLastJobs();
+        $iQuantity = (int) $quantity;
+
+        if ($iQuantity == 0) {
+            $iQuantity++;
+        }
+
+        return parent::selectHigherProcessUnitJobs($iQuantity);
     }
 
     /**
      * @param string $firstLetter
      * @param string $secondLetter
      * @return string
+     * @throws \Exception
      */
     public static function getJobTypeField($firstLetter, $secondLetter = '')
     {
+        if (!file_exists(__DIR__ . '/../../../config/application.php')) {
+            throw new \Exception('Le fichier application.php est introuvable');
+        }
+
         $aConfig = require __DIR__ . '/../../../config/application.php';
         $aFieldType = $aConfig['jobs'];
 

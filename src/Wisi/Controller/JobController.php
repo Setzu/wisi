@@ -47,9 +47,9 @@ class JobController extends AbstractController
                 !isset($aPostedDatas['name'      ]) || strlen($aPostedDatas['name'      ]) > 10 ||
                 !isset($aPostedDatas['user'      ]) || strlen($aPostedDatas['user'      ]) > 10
             ) {
-                $this->addFlashMessage('Un ou plusieurs champs dépassent la longueur maximale autorisé ou n\'ont pas été renseignés');
+                $this->addFlashMessage('Un ou plusieurs champs n\'ont pas été renseignés ou dépassent la longueur maximale autorisé');
 
-                header('Location: /jobs');
+                header('Location: /job');
                 exit;
             } elseif (!in_array($aPostedDatas['system'], $aSystemsList)) {
                 $this->addFlashMessage('Le système choisi n\'est pas référencé');
@@ -78,5 +78,31 @@ class JobController extends AbstractController
 
         $this->setVariables(['aSystems' => $aSystemsList]);
         $this->render('job', 'index');
+    }
+
+
+    /**
+     * @TODO : à terminer
+     * @throws \Exception
+     */
+    public function displayAction()
+    {
+        if (!empty($_POST)) {
+
+            $aPostedDatas = Router::getPostValues();
+
+            if (!isset($aPostedDatas['number']) || !is_numeric($aPostedDatas['number']) ||
+                $aPostedDatas['number'] > 15 || $aPostedDatas['number'] <= 0) {
+                header('Location: /job/display');
+                exit;
+            }
+
+            $this->addFlashMessage('La quantité de jobs à afficher a bien été mise à jour', false);
+
+            header('Location: /index');
+            exit;
+        }
+
+        $this->render('job', 'display');
     }
 }

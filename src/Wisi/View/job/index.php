@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
-        <h3 class="title-form">Suivre un job :</h3>
+        <h4 class="title-form">Suivre un job :</h4>
         <hr>
         <form action="/job" role="form" method="post" class="form-horizontal">
             <div class="form-group">

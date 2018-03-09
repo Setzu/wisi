@@ -20,6 +20,7 @@ class JobModel extends ConnectionModel
     /**
      * TestModel constructor.
      * @param array $aSystemInfos
+     * @throws \Exception
      */
     public function __construct(array $aSystemInfos = [])
     {
@@ -29,7 +30,7 @@ class JobModel extends ConnectionModel
     /**
      * @return array
      */
-    public function selectThreeLastJobs()
+    public function selectHigherProcessUnitJobs($quantity)
     {
         $con = $this->getConnexion();
 
@@ -40,8 +41,10 @@ class JobModel extends ConnectionModel
             return [];
         }
 
+        $iQuantity = (int) $quantity;
+
         $query = 'SELECT NMSYS, JOBNAME, JOBUSER, JOBNUMBER, JOBTYPE, JOBSUBTYPE, SUBSYSTEM, ACTJOBSTS, PROCESSUNT
-FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORDER BY PROCESSUNT DESC FETCH FIRST 3 ROWS ONLY';
+FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORDER BY PROCESSUNT DESC FETCH FIRST ' . $iQuantity . ' ROWS ONLY';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
