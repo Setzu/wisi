@@ -79,12 +79,4 @@ class JobController extends AbstractController
         $this->setVariables(['aSystems' => $aSystemsList]);
         $this->render('job', 'index');
     }
-
-    /**
-     * @throws \Exception
-     */
-    public function affichageAction()
-    {
-        $this->render('job', 'affichage');
-    }
 }

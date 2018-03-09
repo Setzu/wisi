@@ -41,18 +41,12 @@
             <div class="row" style="text-align: center">
                 <h4>Paramétrage des jobs</h4>
                 <a href="/job" class="btn btn-default">Suivre un job</a>
-                <a href="/job/affichage" class="btn btn-danger">Affichage des jobs</a>
             </div>
             <hr>
             <div class="row" style="text-align: center">
                 <h4>Paramétrage des systèmes</h4>
                 <a href="/system" class="btn btn-default">Ajouter un système</a>
-                <a href="/system/update" class="btn btn-danger">Modifier un système</a>
-            </div>
-            <hr>
-            <div class="row" style="text-align: center">
-                <h4>Paramétrage utilisateurs</h4>
-                <a href="#" class="btn btn-danger">Admin</a>
+                <a href="/system/update" class="btn btn-default">Modifier un système</a>
             </div>
         </div>
     </div>

@@ -351,6 +351,52 @@ class ConnectionModel
     }
 
     /**
+     * @param array $aInfosSystem
+     * @return bool
+     */
+    public function updateSystem(array $aInfosSystem)
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        $query = 'UPDATE GFPSYSGES.SSYPR1P0 SET SYSNAME = :SYSNAME, SYSTEMTYP = :SYSTEMTYP, COLOR = :COLOR, SYSPTY = :SYSPTY WHERE NMSYS = :NMSYS';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        try {
+            $stmt->bindParam(':SYSNAME', $aInfosSystem['SYSNAME']);
+            $stmt->bindParam(':SYSTEMTYP', $aInfosSystem['SYSTEMTYP']);
+            $stmt->bindParam(':COLOR', $aInfosSystem['COLOR']);
+            $stmt->bindParam(':SYSPTY', $aInfosSystem['SYSPTY']);
+            $stmt->bindParam(':NMSYS', $aInfosSystem['NMSYS']);
+
+            if (!$stmt->execute()) {
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+                return false;
+            }
+
+            return $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+    }
+
+    /**
      * @param string $system
      * @param int $priority
      * @return array

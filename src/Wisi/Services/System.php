@@ -69,4 +69,45 @@ class System extends SystemModel
 
         return $class;
     }
+
+    /**
+     * @param string $sSystemName
+     * @return array
+     */
+    public function getInfosSystemByName($sSystemName)
+    {
+        if (!is_string($sSystemName) || empty($sSystemName)) {
+            Logs::add('Le paramètre doit être un chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
+        }
+
+        $mReturn = parent::selectInfosSystemByName($sSystemName);
+
+        if (is_array($mReturn)) {
+            return array_map('trim', $mReturn);
+        }
+
+        return [];
+    }
+
+    /**
+     * @param array $aInfosSystem
+     * @return bool
+     */
+    public function updateSystem(array $aInfosSystem)
+    {
+        return parent::updateSystem($aInfosSystem);
+    }
+
+    public function deleteSystemByName($sSystemName)
+    {
+        if (!is_string($sSystemName) || empty($sSystemName)) {
+            Logs::add('Le paramètre doit être un chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
+
+            return [];
+        }
+
+        return parent::deleteSystemByName($sSystemName);
+    }
 }

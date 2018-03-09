@@ -10,46 +10,64 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
-        <h3 class="title-form">Suivre un job :</h3>
+        <h3 class="title-form">Modifier un système :</h3>
         <hr>
-        <form action="/job" role="form" method="post" class="form-horizontal">
+        <form action="/system/update" role="form" method="post" class="form-horizontal">
             <div class="form-group">
-                <label for="system" class="col-sm-4 control-label">Système :</label>
+                <label for="NMSYS" class="col-sm-4 control-label">Système :</label>
                 <div class="col-sm-4">
-                    <select name="system" class="form-control" required="required">
-                        <?php if (isset($this->aSystems) && is_array($this->aSystems)) { ?>
-                            <?php foreach ($this->aSystems as $name) {?>
-                                <option value="<?= $name; ?>"><?= $name; ?></option>
+                    <select name="NMSYS" id="select-update" class="form-control" required="required">
+                        <?php if (isset($this->aSystemsList) && is_array($this->aSystemsList)) { ?>
+                            <?php foreach ($this->aSystemsList as $aSystem) { ?>
+                                <option value="<?= urlencode($aSystem['NMSYS']); ?>"><?= $aSystem['NMSYS']; ?></option>
                             <?php } ?>
                         <?php } ?>
                     </select>
                 </div>
             </div>
             <div class="form-group">
-                <label for="sub-system" class="col-sm-4 control-label">Sous-système :</label>
+                <label for="SYSNAME" class="col-sm-4 control-label">Alias<span style="color: #a94442;">*</span> :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="sub-system" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="system-alias" type="text" name="SYSNAME" required="required" placeholder="DEV" maxlength="10" class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="name" class="col-sm-4 control-label">Nom du job :</label>
+                <label for="SYSTEMTYP" class="col-sm-4 control-label">Type de données :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="name" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="system-type" type="text" name="SYSTEMTYP" maxlength="3" placeholder="DEV" class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="user" class="col-sm-4 control-label">Utilisateur du job :</label>
+                <label for="SYSPTY" class="col-sm-4 control-label">Priorité<span style="color: #a94442;">*</span> :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="user" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="system-priority" type="number" name="SYSPTY" min="1" placeholder="1" class="form-control" required="required">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="COLOR" class="col-sm-4 control-label">Couleur :</label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <div class="input-group-addon">#</div>
+                        <input id="system-color" type="text" name="COLOR" maxlength="6" class="form-control">
+                        <div class="input-group-addon" id="color">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <span style="color: #a94442; float: left;">*&nbsp;</span>
+            <p>Champs obligatoire</p>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Ajouter le suivi</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+                <div class="col-sm-4">
+                    <button id="delete-system" type="button" class="btn btn-danger" data-toggle="tooltip"
+                            title="Supprimer le système ?" style="float: right;">Supprimer</button>
                 </div>
             </div>
         </form>
-        <p style="border: 1px solid #ac2925; padding: 5px;">Une fois le suivi d'un job validé, une alerte sera
-            déclenchée si le job n'est PAS présent dans le fichier <strong>SSYJBSP0</strong> du système sélectionné.</p>
     </div>
 </div>
+
+<script type="text/javascript" src="<?= '/js/add-system.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/js/update-system.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/js/delete-system.js'; ?>"></script>

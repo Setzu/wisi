@@ -106,4 +106,85 @@ class SystemModel extends ConnectionModel
 
         return $aResults;
     }
+
+    /**
+     * @param string $sSystemName
+     * @return array|bool
+     */
+    public function selectInfosSystemByName($sSystemName)
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            return false;
+        }
+
+        $query = 'SELECT NMSYS, SYSNAME, SYSTEMTYP, COLOR, SYSPTY FROM GFPSYSGES.SSYPR1P0 WHERE NMSYS = :NMSYS';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        try {
+            $stmt->bindParam(':NMSYS', $sSystemName);
+
+            if (!$stmt->execute()) {
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+                return false;
+            }
+
+            $aResults = $stmt->fetch(\PDO::FETCH_ASSOC);
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+
+            return false;
+        }
+
+        return $aResults;
+    }
+
+    public function deleteSystemByName($sSystemName)
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            return false;
+        }
+
+        $query = 'DELETE FROM GFPSYSGES.SSYPR1P0 WHERE NMSYS = :NMSYS';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
+        try {
+            $stmt->bindParam(':NMSYS', $sSystemName);
+
+            if (!$stmt->execute()) {
+                $aErrorInfos = $con->errorInfo();
+                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+                return false;
+            }
+
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+
+            return false;
+        }
+
+        return $stmt->closeCursor();
+    }
 }

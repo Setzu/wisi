@@ -53,16 +53,16 @@ class IndexController extends AbstractController
                 $aMainInfos[$aSystem['NMSYS']]['UC'] = $oSystem->getUCUtilisation();
 
                 // Ajout d'une alerte si le % d'utilisation de l'UC est supérieur à 80%
-                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] > 80) {
-                    $alert = 'Le système ' . $aSystem['NMSYS'] . ' est à ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] . " % d'utilisation sur l'ASP 1";
-                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_ASP, $alert);
-                }
+//                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] > 80) {
+//                    $alert = 'Le système ' . $aSystem['NMSYS'] . ' est à ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] . " % d'utilisation sur l'ASP 1";
+//                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_ASP, $alert);
+//                }
 
                 // Ajout d'une alerte si le % d'utilisation du CPU est supérieur à 80%
-                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] > 80) {
-                    $alert = 'Le CPU du système ' . $aSystem['NMSYS'] . ' utilise ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] . ' % de ressources';
-                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_CPU, $alert);
-                }
+//                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] > 80) {
+//                    $alert = 'Le CPU du système ' . $aSystem['NMSYS'] . ' utilise ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] . ' % de ressources';
+//                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_CPU, $alert);
+//                }
 
                 $oJob = new Job($aSystem);
                 $aRequiredJobs = $oJob->verifRequiredJobs();
