@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
-        <h3 class="title-form">Ajouter un système :</h3>
+        <h3 class="title-form">Ajouter un système</h3>
         <hr>
         <form action="/system" method="post" role="form" id="addsystem" class="form-horizontal">
             <div class="form-group">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
+                <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
                     <button type="button" id="test-connection" class="btn btn-default">
                         <span id="system-con" class="glyphicon glyphicon-refresh"></span>&nbsp;Tester la connexion
                     </button>

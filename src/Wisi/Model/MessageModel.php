@@ -33,7 +33,7 @@ class MessageModel extends ConnectionModel
 
         if (!$con instanceof \PDO) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
@@ -42,7 +42,7 @@ class MessageModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }

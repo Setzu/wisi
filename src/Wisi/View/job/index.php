@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
-        <h4 class="title-form">Suivre un job :</h4>
+        <h3 class="title-form">Suivre un job</h3>
         <hr>
         <form action="/job" role="form" method="post" class="form-horizontal">
             <div class="form-group">
@@ -28,19 +28,19 @@
             <div class="form-group">
                 <label for="sub-system" class="col-sm-4 control-label">Sous-système :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="sub-system" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="subsystem" type="text" name="sub-system" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="name" class="col-sm-4 control-label">Nom du job :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="name" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="jobname" type="text" name="name" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="user" class="col-sm-4 control-label">Utilisateur du job :</label>
                 <div class="col-sm-4">
-                    <input type="text" name="user" maxlength="10" required="required" placeholder="" class="form-control">
+                    <input id="jobuser" type="text" name="user" maxlength="10" required="required" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -53,3 +53,5 @@
             déclenchée si le job n'est PAS présent dans le fichier <strong>SSYJBSP0</strong> du système sélectionné.</p>
     </div>
 </div>
+
+<script type="text/javascript" src="<?= '/js/job-follow.js' ;?>"></script>

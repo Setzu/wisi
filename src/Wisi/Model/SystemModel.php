@@ -35,7 +35,7 @@ class SystemModel extends ConnectionModel
 
         if (!$con instanceof \PDO) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
@@ -45,14 +45,14 @@ class SystemModel extends ConnectionModel
         try {
             if (!$stmt = $con->query($query)) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
@@ -76,6 +76,9 @@ class SystemModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
             return [];
         }
 
@@ -84,14 +87,14 @@ class SystemModel extends ConnectionModel
         try {
             if (!$stmt = $con->query($query)) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return [];
             }
@@ -124,7 +127,7 @@ class SystemModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
@@ -134,7 +137,7 @@ class SystemModel extends ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return false;
             }
@@ -163,7 +166,7 @@ class SystemModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
@@ -173,7 +176,7 @@ class SystemModel extends ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return false;
             }

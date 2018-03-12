@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
-        <h3 class="title-form">Modifier un système :</h3>
+        <h3 class="title-form">Modifier un système</h3>
         <hr>
         <form action="/system/update" role="form" method="post" class="form-horizontal">
             <div class="form-group">

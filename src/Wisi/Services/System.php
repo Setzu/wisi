@@ -58,11 +58,9 @@ class System extends SystemModel
     public static function storageClassByUC($UCValue)
     {
         $iUCValue = (int) $UCValue;
-        $class = 'info';
+        $class = 'success';
 
-        if ($iUCValue >= 40 && $iUCValue < 60) {
-            $class = 'success';
-        } elseif ($iUCValue >= 60 && $iUCValue < 80) {
+        if ($iUCValue >= 50 && $iUCValue < 80) {
             $class = 'warning';
         } elseif ($iUCValue >= 80) {
             $class = 'danger';

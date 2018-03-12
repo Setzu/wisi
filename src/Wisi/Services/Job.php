@@ -85,23 +85,33 @@ class Job extends JobModel
     }
 
     /**
+     * @param string $system
      * @return array
      */
-    public function verifRequiredJobs()
+    public function getRequiredJobsBySystem($system)
     {
-        $aRequiredJobs = $this->selectRequiredJobs();
+        $aRequiredJobs = $this->selectRequiredJobsBySystem($system);
 
-        if (count($aRequiredJobs) == 0) {
+        return $aRequiredJobs;
+    }
+
+    /**
+     * @param array $aRequiredJobs
+     * @return array
+     */
+    public function verifRequiredJobs(array $aRequiredJobs)
+    {
+        if (!is_array($aRequiredJobs) || count($aRequiredJobs) == 0) {
             return [];
         }
 
-        $aListFindJobs = [];
+        $aListRunningJobs = [];
 
         foreach ($aRequiredJobs as $k => $aJobs) {
-            $aListFindJobs[$k]['isExist'] = $this->isJobExists($aJobs);
-            $aListFindJobs[$k]['job'] = $aJobs;
+            $aListRunningJobs[$k]['isExist'] = $this->isRunningJob($aJobs);
+            $aListRunningJobs[$k]['job'] = $aJobs;
         }
 
-        return $aListFindJobs;
+        return $aListRunningJobs;
     }
 }

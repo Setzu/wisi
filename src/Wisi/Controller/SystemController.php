@@ -83,6 +83,13 @@ class SystemController extends AbstractController
     {
         if (!empty($_POST) && array_key_exists('ajax', $_POST) && $_POST['ajax']) {
             $aPostedDatas = Router::getPostValues();
+
+            if (!isset($_POST['bdd']) || !isset($_POST['host']) || !isset($_POST['user']) || !isset($_POST['password'])) {
+                echo 'false';
+
+                return false;
+            }
+
             $bCon = ConnectionModel::testConnection($aPostedDatas);
 
             if ($bCon) {
@@ -101,6 +108,8 @@ class SystemController extends AbstractController
     }
 
     /**
+     * @TODO : voir les priorités
+     *
      * @return mixed
      * @throws \Exception
      */

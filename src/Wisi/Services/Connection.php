@@ -32,13 +32,15 @@ class Connection extends ConnectionModel
      */
     public function addConnection(array $aSystemInfos)
     {
-        $aPriority = $this->selectHigherPriority($aSystemInfos['SYSPTY']);
+        $iPriority = (int) $aSystemInfos['SYSPTY'];
 
-        if (is_array($aPriority) && count($aPriority) > 0) {
-            foreach ($aPriority as $aValues) {
-                $this->updatePriorityBySystemAndPriority($aValues['NMSYS'], $aValues['SYSPTY'] + 1);
-            }
+        if ($iPriority == 0) {
+            Logs::add('La priorité doit être supérieur à 0. ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
         }
+
+        $this->updatePriority($aSystemInfos['NMSYS'], $iPriority);
 
         $aSystemInfos['PWUSR']  = base64_encode($aSystemInfos['PWUSR']);
         $aSystemInfos['SYSPTY'] = (int) $aSystemInfos['SYSPTY'];
@@ -47,7 +49,7 @@ class Connection extends ConnectionModel
     }
 
     /**
-     * @return array|bool
+     * @return array
      */
     public function getAllConnections()
     {

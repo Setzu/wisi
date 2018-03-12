@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="row">
+<div class="row" style="box-shadow: 5px 10px 18px #888888;">
     <div id="tabs">
         <ul>
             <li><a id="link-tab1" href="#tabs-1">GFP Power - Main</a></li>
@@ -39,15 +39,29 @@
         <?php } ?>
         <div id="tabs-4">
             <div class="row" style="text-align: center">
-                <h4>Paramétrage des jobs</h4>
-                <a href="/job" class="btn btn-default">Suivre un job</a>
-                <a href="/job/display" class="btn btn-default">Affichage des jobs</a>
+                <h3>Paramétrage des jobs</h3>
+                <br>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                    <a href="/job" class="btn btn-default btn-block btn-lg">Suivre un job</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/job/display" class="btn btn-default btn-block btn-lg">Affichage des jobs</a>
+                </div>
             </div>
-            <hr>
+            <br>
             <div class="row" style="text-align: center">
-                <h4>Paramétrage des systèmes</h4>
-                <a href="/system" class="btn btn-default">Ajouter un système</a>
-                <a href="/system/update" class="btn btn-default">Modifier un système</a>
+                <h3>Paramétrage des systèmes</h3>
+                <br>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                    <a href="/system" class="btn btn-default btn-block btn-lg">Ajouter un système</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
+                </div>
             </div>
         </div>
     </div>

@@ -125,8 +125,6 @@ class ConnectionModel
     }
 
     /**
-     * @TODO : élucider le mystère sur la disparition de la machine MERCER...
-     *
      * @return bool
      */
     public function setConnexion()
@@ -135,15 +133,13 @@ class ConnectionModel
 
         $sConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
             $this->getHost() . ';PROTOCOL=TCPIP;UID=' . $this->getUser() . ';PWD=' . $this->getPassword() . ';NAM=1;';
-//        $aConnectionParams = "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=" . $this->getHost() . ";PORT=50000;DATABASE=" .
-//            $this->getDatabase() . ";PROTOCOL=TCPIP;UID=" . $this->getUser() . ";PWD=" . $this->getPassword() . ";";
 
         try {
             // Limitation à quelques secondes pour éviter les timeout
             set_time_limit(3);
             $this->connexion = new \PDO($sConnectionParams, $this->getUser(), $this->getPassword(), [\PDO::ATTR_PERSISTENT => true]);
         } catch (\PDOException $e) {
-            Logs::add('Paramètre de connection à PDO : ' . $sConnectionParams);
+            Logs::add('Paramètres de connection à PDO : ' . $sConnectionParams);
             Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
@@ -161,9 +157,6 @@ class ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return false;
         }
 
@@ -172,7 +165,7 @@ class ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
@@ -193,7 +186,7 @@ class ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return false;
             }
@@ -217,9 +210,6 @@ class ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return false;
         }
 
@@ -227,7 +217,7 @@ class ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
@@ -237,7 +227,7 @@ class ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return false;
             }
@@ -254,34 +244,31 @@ class ConnectionModel
     }
 
     /**
-     * @return array|bool
+     * @return array
      */
     public function selectAllConnections()
     {
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return false;
+            return [];
         }
 
         $query = 'SELECT NMSYS, SYSNAME, IPADR, NMUSR, PWUSR, DBNAME, SYSTEMTYP, COLOR, SYSPTY FROM GFPSYSGES.SSYPR1P0 ORDER BY SYSPTY ASC';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
-            return false;
+            return [];
         }
 
         try {
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
-                return false;
+                return [];
             }
 
             $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -289,7 +276,7 @@ class ConnectionModel
         } catch (\PDOException $e) {
             Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
-            return false;
+            return [];
         }
 
         return $aResults;
@@ -310,9 +297,6 @@ class ConnectionModel
             $con = new \PDO($aParams, $aSystemInfos['user'], $aSystemInfos['password'], [\PDO::ATTR_PERSISTENT => TRUE]);
 
             if (!$con) {
-                $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
                 return false;
             }
         } catch (\PDOException $e) {
@@ -325,45 +309,6 @@ class ConnectionModel
     }
 
     /**
-     * @param int $priority
-     * @return array
-     */
-    public function selectHigherPriority($priority)
-    {
-        $con = $this->getConnexion();
-
-        if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
-        }
-
-        $query = 'SELECT NMSYS, SYSPTY FROM GFPSYSGES.SSYPR1P0 WHERE SYSPTY >= :SYSPTY';
-        $iPriority = (int) $priority;
-
-        if ($iPriority == 0) {
-            Logs::add('La priorité doit être supérieur à 0. ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
-        }
-
-        try {
-            $stmt = $con->prepare($query);
-            $stmt->bindParam(':SYSPTY', $iPriority);
-            $stmt->execute();
-            $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            $stmt->closeCursor();
-        } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
-        }
-
-        return $aResults;
-    }
-
-    /**
      * @param array $aInfosSystem
      * @return bool
      */
@@ -372,9 +317,6 @@ class ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return false;
         }
 
@@ -396,7 +338,7 @@ class ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
                 return false;
             }
@@ -412,35 +354,37 @@ class ConnectionModel
     /**
      * @param string $system
      * @param int $priority
-     * @return array
+     * @return bool
      */
-    public function updatePriorityBySystemAndPriority($system, $priority)
+    public function updatePriority($system, $priority)
     {
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
+            return false;
         }
 
         $query = 'UPDATE GFPSYSGES.SSYPR1P0 SET SYSPTY = :SYSPTY WHERE NMSYS = :NMSYS';
         $iPriority = (int) $priority;
 
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return false;
+        }
+
         try {
-            $stmt = $con->prepare($query);
             $stmt->bindParam(':SYSPTY', $iPriority);
             $stmt->bindParam(':NMSYS', $system);
             $stmt->execute();
-            $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            $stmt->closeCursor();
+
         } catch (\PDOException $e) {
             Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
-            return [];
+            return false;
         }
 
-        return $aResults;
+        return $stmt->closeCursor();
     }
 }

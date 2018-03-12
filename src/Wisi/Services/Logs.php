@@ -29,7 +29,7 @@ class Logs
 
         try{
             $logFile = fopen($sFile, 'a+');
-            $content = date('d/m/Y H:i:s : ');
+            $content = date('d/m/Y H:i:s ');
 
             if (is_array($log)) {
                 foreach ($log as $k => $v) {

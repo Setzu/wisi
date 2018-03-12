@@ -52,28 +52,22 @@ class IndexController extends AbstractController
                 $aMainInfos[$aSystem['NMSYS']]['MESSAGES'] = $oMessage->getMessagesQSYSOPR();
                 $aMainInfos[$aSystem['NMSYS']]['UC'] = $oSystem->getUCUtilisation();
 
-                // Ajout d'une alerte si le % d'utilisation de l'UC est supérieur à 80%
-//                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] > 80) {
-//                    $alert = 'Le système ' . $aSystem['NMSYS'] . ' est à ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sASPUtilisation'] . " % d'utilisation sur l'ASP 1";
-//                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_ASP, $alert);
-//                }
-
-                // Ajout d'une alerte si le % d'utilisation du CPU est supérieur à 80%
-//                if (isset($aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation']) && $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] > 80) {
-//                    $alert = 'Le CPU du système ' . $aSystem['NMSYS'] . ' utilise ' . $aMainInfos[$aSystem['NMSYS']]['UC']['sCPUUtilisation'] . ' % de ressources';
-//                    $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], self::ALERT_CPU, $alert);
-//                }
-
-                $oJob = new Job($aSystem);
-                $aRequiredJobs = $oJob->verifRequiredJobs();
+                // On récupère la liste des jobs obligatoires dans le fichier SSYPR3P0 (uniquement présent sur la DEV)
+                $oJob = new Job();
+                $aRequiredJobs = $oJob->getRequiredJobsBySystem($aSystem['NMSYS']);
 
                 // Ajout d'une alerte si l'un des job du fichier SSYPR3P0 n'a pas été trouvé dans SSYJBSP0
                 if (is_array($aRequiredJobs) && count($aRequiredJobs) > 0) {
-                    foreach ($aRequiredJobs as $k => $aJobs) {
-                        if (!$aJobs['isExist']) {
-                            $alert = 'Le job ' . $aJobs['job']['JOBNAME'] . " de l'utilisateur " . $aJobs['job']['USERNAME'] .
-                                ' et du sous-système ' . $aJobs['job']['SUBSYSTEM'] . " n'a pas été trouvé dans le fichier SSYJBSP0";
-                            $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], $k, $alert);
+                    $oJob = new Job($aSystem);
+                    $aRunningJobs = $oJob->verifRequiredJobs($aRequiredJobs);
+
+                    if (is_array($aRunningJobs) && count($aRunningJobs) > 0) {
+                        foreach ($aRunningJobs as $k => $aJobs) {
+                            if (!$aJobs['isExist']) {
+                                $alert = 'Le job ' . $aJobs['job']['JOBNAME'] . " de l'utilisateur " . $aJobs['job']['USERNAME'] .
+                                    ' et du sous-système ' . $aJobs['job']['SUBSYSTEM'] . " n'a pas été trouvé dans le fichier SSYJBSP0";
+                                $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], $k, $alert);
+                            }
                         }
                     }
                 }
@@ -108,10 +102,10 @@ class IndexController extends AbstractController
             $aConnectionsList = $oConnectionService->getAllConnections();
             $aJobsList = [];
 
-            // On récupère les 3 jobs les plus gourmands en ressources (hors jobs QSYS) de chaques systèmes
+            // On récupère les 3 jobs les plus gourmands en ressources (hors jobs QSYS) de chaque système
             foreach ($aConnectionsList as $aSystem) {
                 $oJob = new Job($aSystem);
-                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getHigherProcessUnitJobs(5);
+                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getHigherProcessUnitJobs(3);
                 $aJobsList[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
                 $aJobsList[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
                 $aJobsList[$aSystem['NMSYS']]['SYSPTY'] = $aSystem['SYSPTY'];

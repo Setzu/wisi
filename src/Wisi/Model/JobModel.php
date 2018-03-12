@@ -35,9 +35,6 @@ class JobModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return [];
         }
 
@@ -48,7 +45,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
@@ -79,9 +76,6 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return false;
         }
 
@@ -89,7 +83,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
@@ -113,29 +107,28 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
     /**
      * Select all required jobs
      *
+     * @param string $system
      * @return array
      */
-    public function selectRequiredJobs()
+    public function selectRequiredJobsBySystem($system)
     {
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return [];
         }
 
-        $query = 'SELECT NMSYS, SUBSYSTEM, JOBNAME, USERNAME FROM GFPSYSGES.SSYPR3P0';
+        $query = 'SELECT NMSYS, SUBSYSTEM, JOBNAME, USERNAME FROM GFPSYSGES.SSYPR3P0 WHERE NMSYS = :NMSYS';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return [];
         }
 
         try {
+            $stmt->bindParam(':NMSYS', $system);
             $stmt->execute();
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
@@ -152,14 +145,11 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
      * @param array $aJobInfos
      * @return bool
      */
-    public function isJobExists(array $aJobInfos)
+    public function isRunningJob(array $aJobInfos)
     {
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return false;
         }
 
@@ -168,7 +158,7 @@ WHERE NMSYS = :NMSYS AND SUBSYSTEM = :SUBSYSTEM AND JOBNAME = :JOBNAME AND JOBUS
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add($aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
 
             return false;
         }
