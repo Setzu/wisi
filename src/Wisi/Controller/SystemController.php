@@ -35,7 +35,7 @@ class SystemController extends AbstractController
             if ($bConnectionAlreadyExists) {
                 $this->addFlashMessage('Le système : ' . $aPostedDatas['NMSYS'] . ' existe déjà');
 
-                header('Location: /system');
+                header('Location: /apps/wisi/public/system');
                 exit;
             }
 
@@ -50,7 +50,7 @@ class SystemController extends AbstractController
                 (isset($aPostedDatas['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 6)
             ) {
                 $this->addFlashMessage("L'un des champs dépasse la longueur maximale autorisée ou n'a pas été renseigné.");
-                header('Location: /system');
+                header('Location: /apps/wisi/public/system');
                 exit;
             }
 
@@ -61,13 +61,13 @@ class SystemController extends AbstractController
             if (!$oConnectionService->addConnection($aPostedDatas)) {
                 $this->addFlashMessage("Le système n'a pas pu être ajouté, voir fichier de logs pour plus de détail");
 
-                header('Location: /system');
+                header('Location: /apps/wisi/public/system');
                 exit;
             } else {
                 $this->addFlashMessage('Le système a bien été ajouté', false);
             }
 
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         } else {
             return $this->render('system');
@@ -102,7 +102,7 @@ class SystemController extends AbstractController
                 return true;
             }
         } else {
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         }
     }
@@ -119,7 +119,7 @@ class SystemController extends AbstractController
             $aPostedDatas = Router::getPostValues();
 
             if (!isset($aPostedDatas['NMSYS'])) {
-                header('Location: /system/update');
+                header('Location: /apps/wisi/public/system/update');
                 exit;
             }
 
@@ -130,7 +130,7 @@ class SystemController extends AbstractController
             if (!is_array($aSystemInfos) || count($aSystemInfos) == 0) {
                 $this->addFlashMessage('Le système : ' . $sSystemName . ' n\'existe pas');
 
-                header('Location: /system/update');
+                header('Location: /apps/wisi/public/system/update');
                 exit;
             }
 
@@ -139,7 +139,7 @@ class SystemController extends AbstractController
             if (count($aModif) == 0) {
                 $this->addFlashMessage("Aucune modification n'a été effectuée");
 
-                header('Location: /index');
+                header('Location: /apps/wisi/public/index');
                 exit;
             }
 
@@ -150,20 +150,20 @@ class SystemController extends AbstractController
             ) {
                 $this->addFlashMessage("L'un des champs dépasse la longueur maximale autorisée");
 
-                header('Location: /system/update');
+                header('Location: /apps/wisi/public/system/update');
                 exit;
             }
 
             if (!$oSystemService->updateSystem($aPostedDatas)) {
                 $this->addFlashMessage("Le système n'a pas pu être ajouté, voir fichier de logs pour plus de détail");
 
-                header('Location: /system/update');
+                header('Location: /apps/wisi/public/system/update');
                 exit;
             } else {
                 $this->addFlashMessage('Le système a bien été modifié', false);
             }
 
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         } else {
             $oConnectionService = new Connection();
@@ -172,7 +172,7 @@ class SystemController extends AbstractController
             if (!is_array($aConnectionsList) || count($aConnectionsList) == 0) {
                 $this->addFlashMessage('Aucun système n\'a été trouvé, commencez par en ajouter un');
 
-                header('Location: /index');
+                header('Location: /apps/wisi/public/index');
                 exit;
             }
 
@@ -222,7 +222,7 @@ class SystemController extends AbstractController
             echo 'true';
             return true;
         } else {
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         }
     }
@@ -238,7 +238,7 @@ class SystemController extends AbstractController
             $aPostedDatas = Router::getPostValues();
 
             if (!isset($aPostedDatas['select'])) {
-                header('Location: /system/update');
+                header('Location: /apps/wisi/public/system/update');
                 exit;
             }
 
@@ -260,7 +260,7 @@ class SystemController extends AbstractController
             echo json_encode($aInfosSystems);
             return true;
         } else {
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         }
     }

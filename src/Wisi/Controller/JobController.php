@@ -49,12 +49,12 @@ class JobController extends AbstractController
             ) {
                 $this->addFlashMessage('Un ou plusieurs champs n\'ont pas été renseignés ou dépassent la longueur maximale autorisé');
 
-                header('Location: /job');
+                header('Location: /apps/wisi/public/job');
                 exit;
             } elseif (!in_array($aPostedDatas['system'], $aSystemsList)) {
                 $this->addFlashMessage('Le système choisi n\'est pas référencé');
 
-                header('Location: /job');
+                header('Location: /apps/wisi/public/job');
                 exit;
             }
 
@@ -65,13 +65,13 @@ class JobController extends AbstractController
                 $this->addFlashMessage('Le suivi du job a été ajouté avec succès. Une alerte sera ajoutée dans l\'onglet
                  Alertes si le job ne figure pas dans le fichier SSYJBSP0.', false);
 
-                header('Location: /index');
+                header('Location: /apps/wisi/public/index');
                 exit;
             } else {
                 $this->addFlashMessage('Le suivi du job n\'a pas pu être ajouté. Consultez le fichier de logs pour
                 plus de détails.');
 
-                header('Location: /job');
+                header('Location: /apps/wisi/public/job');
                 exit;
             }
         }
@@ -93,13 +93,13 @@ class JobController extends AbstractController
 
             if (!isset($aPostedDatas['number']) || !is_numeric($aPostedDatas['number']) ||
                 $aPostedDatas['number'] > 15 || $aPostedDatas['number'] <= 0) {
-                header('Location: /job/display');
+                header('Location: /apps/wisi/public/job/display');
                 exit;
             }
 
             $this->addFlashMessage('La quantité de jobs à afficher a bien été mise à jour', false);
 
-            header('Location: /index');
+            header('Location: /apps/wisi/public/index');
             exit;
         }
 

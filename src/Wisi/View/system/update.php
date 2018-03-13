@@ -9,10 +9,10 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
-        <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
+        <a href="/apps/wisi/public/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
         <h3 class="title-form">Modifier un système</h3>
         <hr>
-        <form action="/system/update" role="form" method="post" class="form-horizontal">
+        <form action="/apps/wisi/public/system/update" role="form" method="post" class="form-horizontal">
             <div class="form-group">
                 <label for="NMSYS" class="col-sm-4 control-label">Système :</label>
                 <div class="col-sm-4">
@@ -68,6 +68,6 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?= '/js/add-system.js'; ?>"></script>
-<script type="text/javascript" src="<?= '/js/update-system.js'; ?>"></script>
-<script type="text/javascript" src="<?= '/js/delete-system.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/add-system.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/update-system.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/delete-system.js'; ?>"></script>

@@ -102,5 +102,5 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?= '/js/messages-datatable.js'; ?>"></script>
-<script type="text/javascript" src="<?= '/js/load-status.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/messages-datatable.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/load-status.js'; ?>"></script>

@@ -5,7 +5,7 @@ $(function () {
 
         $.ajax({
             method: 'POST',
-            url: '/index/jobs',
+            url: '/apps/wisi/public/index/jobs',
             data: {
                 action: 'jobs'
             },

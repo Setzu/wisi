@@ -84,7 +84,7 @@ class IndexController extends AbstractController
 
             return require_once __DIR__ . '/../View/index/messages.php';
         } else {
-            header('location: /index');
+            header('location: /apps/wisi/public/index');
             exit;
         }
     }
@@ -117,7 +117,7 @@ class IndexController extends AbstractController
 
             return require __DIR__ . '/../View/index/jobs.php';
         } else {
-            header('location: /index');
+            header('location: /apps/wisi/public/index');
             exit;
         }
     }
@@ -149,7 +149,7 @@ class IndexController extends AbstractController
 
             return;
         } else {
-            header('location: /index');
+            header('location: /apps/wisi/public/index');
             exit;
         }
     }

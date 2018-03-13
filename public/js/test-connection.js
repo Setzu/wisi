@@ -14,7 +14,7 @@ $(function () {
                 user: $('#system-user').val(),
                 password: $('#system-password').val()
             },
-            url: '/system/testConnection',
+            url: '/apps/wisi/public/system/testConnection',
             dataType: 'html',
             success: function (data) {
                 if (data === 'success') {

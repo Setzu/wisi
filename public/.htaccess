@@ -1,5 +1,6 @@
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^https://outils-gfp.gfp2000.com$
+#RewriteCond %{HTTP_HOST} ^https://outils-gfp.gfp2000.com/apps/wisi/public/$
+RewriteCond %{HTTP_HOST} ^wisi.local/apps/wisi/public/$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([a-zA-Z_-]*)/?([a-zA-Z_-]*)?/?([a-zA-Z0-9/\ $=_£%:\-+]*)$ index.php?controller=$1&action=$2&param=$3 [NC,L]
+RewriteRule ^([a-zA-Z_-]*)/?([a-zA-Z_-]*)?/?([a-zA-Z0-9/\ $=_£%:\-+]*)$ /apps/wisi/public/index.php?controller=$1&action=$2&param=$3 [NC,L]

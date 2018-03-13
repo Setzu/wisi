@@ -5,7 +5,7 @@ $(function() {
     var loadSystemInfo = function(value) {
         $.ajax({
             method: 'POST',
-            url: '/system/loadInfos',
+            url: '/apps/wisi/public/system/loadInfos',
             data: {
                 select: value
             },

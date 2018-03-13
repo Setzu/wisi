@@ -22,13 +22,13 @@
         <!-- Contenu chargé en ajax (messages.php)-->
         <div id="tabs-1">
         <span class="ajax-loader col-md-offset-5" style="display: none;">
-            <img src="<?= '/img/ajax-loader.gif'; ?>" alt="loader">
+            <img src="<?= '/apps/wisi/public/img/ajax-loader.gif'; ?>" alt="loader">
         </span>
         </div>
         <!-- Contenu chargé en ajax (jobs.php)-->
         <div id="tabs-2">
         <span class="ajax-loader col-md-offset-5" style="display: none;">
-            <img src="<?= '/img/ajax-loader.gif'; ?>" alt="loader">
+            <img src="<?= '/apps/wisi/public/img/ajax-loader.gif'; ?>" alt="loader">
         </span>
         </div>
         <?php if (isset($_SESSION['alerts']) && is_array($_SESSION['alerts'])) { ?>
@@ -44,10 +44,10 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a href="/job" class="btn btn-default btn-block btn-lg">Suivre un job</a>
+                    <a href="/apps/wisi/public/job" class="btn btn-default btn-block btn-lg">Suivre un job</a>
                 </div>
                 <div class="col-md-3">
-                    <a href="/job/display" class="btn btn-default btn-block btn-lg">Affichage des jobs</a>
+                    <a href="/apps/wisi/public/job/display" class="btn btn-default btn-block btn-lg">Affichage des jobs</a>
                 </div>
             </div>
             <br>
@@ -57,19 +57,19 @@
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-3">
-                    <a href="/system" class="btn btn-default btn-block btn-lg">Ajouter un système</a>
+                    <a href="/apps/wisi/public/system" class="btn btn-default btn-block btn-lg">Ajouter un système</a>
                 </div>
                 <div class="col-md-3">
-                    <a href="/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
+                    <a href="/apps/wisi/public/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript" src="<?= '/js/tab.js'; ?>"></script>
-<script type="text/javascript" src="<?= '/js/load-messages.js'; ?>"></script>
-<script type="text/javascript" src="<?= '/js/load-jobs.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/tab.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/load-messages.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/apps/wisi/public/js/load-jobs.js'; ?>"></script>
 
 <!-- Rafraîchissement de la page si inictivité pendant 30 secondes-->
 <script type="text/javascript">
