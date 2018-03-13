@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary btn-block">Valider</button>
                 </div>
             </div>
         </form>

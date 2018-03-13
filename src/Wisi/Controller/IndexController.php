@@ -135,7 +135,7 @@ class IndexController extends AbstractController
             $aConnectionsList = $oConnectionService->getAllConnections();
             $aSystemStatus = [];
 
-            // On récupère le statut de chaques systèmes
+            // On récupère le statut de chaque système
             foreach ($aConnectionsList as $aSystem) {
                 $oSystem = new System($aSystem);
                 $aSystemStatus[$aSystem['NMSYS']]['status'] = $oSystem->getSystemStatus();

@@ -1,8 +1,7 @@
 $(function() {
     function format(d) {
-        return "Full name: " + d.first_name + ' ' + d.last_name + '<br>' +
-            'Salary: ' + d.salary + '<br>' +
-            "The child row can contain any data you wish, including links, images, inner tables etc.";
+        return 'Priorité du système : ' + d[0] + '<br>' +
+            'Salary: ' + d.salary;
     }
 
     var messages = $('table#messages').DataTable({
@@ -60,7 +59,7 @@ $(function() {
     });
 
     // On each draw, loop over the detailRows array and show any child rows
-    messages.on( 'draw', function() {
+    messages.on('draw', function() {
         $.each(detailRows, function(i, id) {
             $('#' + id + ' td.details-control').trigger('click');
         });

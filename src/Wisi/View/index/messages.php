@@ -89,7 +89,7 @@
                                 <td class="detail"><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
                                 <td class="detail"><?= $v['MSGID']; ?></td>
                                 <td class="detail"><?= $v['MSGTEXT']; ?></td>
-                                <td class="detail"><?= $v['MESSAGESTP']; ?></td>
+                                <td class="detail"><?= \Wisi\Services\Utils::formatDateToEU($v['MESSAGESTP']); ?></td>
                                 <td class="detail"><?= $v['FROMUSER']; ?></td>
                                 <td class="detail"><?= $v['FROMJOB']; ?></td>
                             </tr>

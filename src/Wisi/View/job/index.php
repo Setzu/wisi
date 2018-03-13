@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Ajouter le suivi</button>
+                    <button type="submit" class="btn btn-primary btn-block">Ajouter le suivi</button>
                 </div>
             </div>
         </form>

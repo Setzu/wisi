@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button type="button" id="test-connection" class="btn btn-default">
+                    <button type="button" id="test-connection" class="btn btn-default btn-block">
                         <span id="system-con" class="glyphicon glyphicon-refresh"></span>&nbsp;Tester la connexion
                     </button>
                 </div>
@@ -84,7 +84,7 @@
             <p>Champs obligatoire</p>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button id="add-system" disabled="disabled" type="submit" class="btn btn-primary">Ajouter le système</button>
+                    <button id="add-system" disabled="disabled" type="submit" class="btn btn-primary btn-block">Ajouter le système</button>
                 </div>
             </div>
         </form>

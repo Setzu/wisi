@@ -57,7 +57,7 @@
             <p>Champs obligatoire</p>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-4" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary btn-block">Valider</button>
                 </div>
                 <div class="col-sm-4">
                     <button id="delete-system" type="button" class="btn btn-danger" data-toggle="tooltip"

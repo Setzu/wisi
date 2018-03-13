@@ -71,7 +71,7 @@ abstract class SessionManager
     }
 
     /**
-     * Stocke the flashmessages in session
+     * Stock the flashmessages in session
      *
      * @param $message
      * @param bool|true $error
@@ -116,7 +116,7 @@ abstract class SessionManager
     }
 
     /**
-     * Ajoute des alertes sur le système $system
+     * Ajoute des alertes pour le $system
      * Veillez à ce que l'$id soit unique afin de s'assurer d'avoir plusieurs alertes sur un même système
      *
      * @param string $system
@@ -145,7 +145,7 @@ abstract class SessionManager
             foreach ($_SESSION[self::ALERTS] as $system => $v) {
                 if (is_array($v)) {
                     foreach($v as $title => $aValues) {
-                        $sAlerts .= "<tr><td>" . $system . "</td><td>" . $aValues['alias'] . "</td><td>" . $aValues['alert'] . "</td></tr>";
+                        $sAlerts .= '<tr><td>' . $system . '</td><td>' . $aValues['alias'] . '</td><td>' . $aValues['alert'] . '</td></tr>';
                     }
                 }
             }
