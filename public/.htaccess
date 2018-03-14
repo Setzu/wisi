@@ -1,5 +1,5 @@
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^wisi.local$
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([a-zA-Z_-]*)/?([a-zA-Z_-]*)?/?([a-zA-Z0-9/\ $=_£%:\-+]*)$ index.php?controller=$1&action=$2&param=$3 [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [NC,L,QSA]

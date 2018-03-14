@@ -14,6 +14,8 @@ use Wisi\Services\Logs;
 class MessageModel extends ConnectionModel
 {
 
+    const PRINTER_USER = 'QSPLJOB';
+
     /**
      * MessagesModel constructor.
      * @param array $aSystemInfos
@@ -25,6 +27,8 @@ class MessageModel extends ConnectionModel
     }
 
     /**
+     * Selection de tous les messages QSYSOPR excepté ceux concernant les imprimantes
+     *
      * @return array
      */
     public function selectMessagesQSYSOPR()
@@ -32,13 +36,10 @@ class MessageModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return [];
         }
 
-        $query = 'SELECT * FROM GFPSYSGES.SSYQSOP0';
+        $query = 'SELECT * FROM GFPSYSGES.SSYQSOP0 WHERE FROMUSER != :FROMUSER';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
@@ -47,7 +48,10 @@ class MessageModel extends ConnectionModel
             return [];
         }
 
+        $sFromUser = self::PRINTER_USER;
+
         try {
+            $stmt->bindParam(':FROMUSER', $sFromUser);
             $stmt->execute();
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();

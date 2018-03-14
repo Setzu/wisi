@@ -43,7 +43,7 @@ class IndexController extends AbstractController
         if (!empty($_POST)) {
             $oConnectionService = new Connection();
             $aConnectionsList = $oConnectionService->getAllConnections();
-            $aMainInfos = [];
+            $aMainInfos = $aPing = [];
 
             // On récupère les messages QSYSOPR ainsi que les infos sur l'utilisation des disques et de l'UC pour chaques systèmes
             foreach ($aConnectionsList as $aSystem) {

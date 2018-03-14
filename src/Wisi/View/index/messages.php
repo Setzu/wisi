@@ -78,6 +78,7 @@
                 <th>Date</th>
                 <th>Utilisateur</th>
                 <th>Job</th>
+                <th style="display: none;"></th>
             </tr>
             </thead>
             <tbody>
@@ -88,10 +89,30 @@
                             <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
                                 <td class="detail"><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
                                 <td class="detail"><?= $v['MSGID']; ?></td>
-                                <td class="detail"><?= $v['MSGTEXT']; ?></td>
+                                <td class="detail"><?= utf8_encode($v['MSGTEXT']); ?></td>
                                 <td class="detail"><?= \Wisi\Services\Utils::formatDateToEU($v['MESSAGESTP']); ?></td>
                                 <td class="detail"><?= $v['FROMUSER']; ?></td>
                                 <td class="detail"><?= $v['FROMJOB']; ?></td>
+                                <td style="display: none;">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Type message</th>
+                                            <th>Sous-système</th>
+                                            <th>Message complémentaire</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><?= $v['MSGTYPE']; ?></td>
+                                            <td><?= $v['SUBSYSTEM']; ?></td>
+                                            <td><?= utf8_encode(trim($v['MSGTEXT1'])); ?></td>
+                                            <td><?= $v['JOBSTATUS']; ?></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
                             </tr>
                         <?php } ?>
                     <?php } ?>

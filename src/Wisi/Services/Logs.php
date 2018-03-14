@@ -29,7 +29,7 @@ class Logs
 
         try{
             $logFile = fopen($sFile, 'a+');
-            $content = date('d/m/Y H:i:s ');
+            $content = date('d/m/y H:i:s ');
 
             if (is_array($log)) {
                 foreach ($log as $k => $v) {
@@ -49,13 +49,5 @@ class Logs
 
             return false;
         }
-    }
-
-    /**
-     * @param string $log
-     */
-    public function addLogInBDD($log)
-    {
-
     }
 }

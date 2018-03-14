@@ -19,7 +19,7 @@ $(function () {
             success: function (data) {
                 if (data === 'success') {
                     $('#system-con').removeClass('glyphicon-refresh').addClass('glyphicon-ok');
-                    $('#connect-error').html("<h4 class='alert-success' style='border: 2px solid #d6e9c6;'>Connexion réussie.</h4>");
+                    $('#connect-error').html("<h4 class='alert alert-success' style='border: 2px solid #d6e9c6;'>Connexion réussie.</h4>");
                     $('#test-connection').prop('disabled', true).removeClass('btn-default').addClass('btn-success');
                     $('button#add-system').prop('disabled', false);
                     _connectSystemInputs.prop('readonly', true);
@@ -28,7 +28,7 @@ $(function () {
                     })
                 } else {
                     $('#system-con').removeClass('glyphicon-refresh').addClass('glyphicon-remove');
-                    $('#connect-error').html("<h4 class='alert-danger' style='border: 2px solid #ebccd1;'>La connexion au système a échouée. Vérifiez les informations de connexion.</h4>");
+                    $('#connect-error').html("<h4 class='alert alert-danger' style='border: 2px solid #ebccd1;'>La connexion au système a échouée. Vérifiez les informations de connexion.</h4>");
                     $('#test-connection').prop('disabled', true).removeClass('btn-default').addClass('btn-danger');
                 }
             },

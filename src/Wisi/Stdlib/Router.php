@@ -14,6 +14,10 @@ class Router
 {
     const DEFAULT_CONTROLLER = 'IndexController';
     const DEFAULT_ACTION = 'indexAction';
+    const REGEX_DEFAULT = '/^[a-zA-Z_-]*$/';
+    const REGEX_PARAMS = '/^[a-zA-Z0-9/\ $=_£%:\-+]*$/';
+
+    public $param;
 
     /**
      * @return mixed
@@ -21,8 +25,15 @@ class Router
      */
     public static function dispatch()
     {
-        if (!empty($_GET['controller'])) {
-            $sController = ucfirst(strtolower(trim(htmlspecialchars($_GET['controller'])))) . 'Controller';
+        $sUri = $_SERVER['REQUEST_URI'];
+        $aParamsUri = explode('/', $sUri, 3);
+
+        if (isset($aParamsUri[1]) && !empty($aParamsUri[1])) {
+            if (preg_match(self::REGEX_DEFAULT, $aParamsUri[1])) {
+                $sController = ucfirst(strtolower(trim(htmlspecialchars($aParamsUri[1])))) . 'Controller';
+            } else {
+                return (new IndexController())->pageNotFound();
+            }
         } else {
             $sController = self::DEFAULT_CONTROLLER;
         }
@@ -33,8 +44,12 @@ class Router
             return (new IndexController())->pageNotFound();
         }
 
-        if (!empty($_GET['action'])) {
-            $sActionName = ucfirst(strtolower(trim(htmlspecialchars($_GET['action'])))) . 'Action';
+        if (isset($aParamsUri[2]) && !empty($aParamsUri[2])) {
+            if (preg_match(self::REGEX_DEFAULT, $aParamsUri[2])) {
+                $sActionName = ucfirst(strtolower(trim(htmlspecialchars($aParamsUri[2])))) . 'Action';
+            } else {
+                return (new IndexController())->pageNotFound();
+            }
         } else {
             $sActionName = self::DEFAULT_ACTION;
         }
@@ -46,6 +61,9 @@ class Router
         return (new $sControllerName)->$sActionName();
     }
 
+    /**
+     * @return array
+     */
     public static function getPostValues()
     {
         $values = [];
@@ -57,8 +75,18 @@ class Router
         return $values;
     }
 
-    public static function getGetValues()
+    /**
+     * @return string|null
+     */
+    public static function getParams()
     {
-        return htmlspecialchars($_GET['param']);
+        $sUri = $_SERVER['REQUEST_URI'];
+        $aParamsUri = explode('/', $sUri, 3);
+
+        if (isset($aParamsUri[3]) && !empty($aParamsUri[3]) && preg_match(self::REGEX_PARAMS, $aParamsUri[3])) {
+            return $aParamsUri[3];
+        } else {
+            return null;
+        }
     }
 }
