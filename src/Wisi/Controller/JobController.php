@@ -11,6 +11,7 @@ namespace Wisi\Controller;
 
 use Wisi\Services\Connection;
 use Wisi\Services\Job;
+use Wisi\Services\Params;
 use Wisi\Stdlib\Router;
 
 /**
@@ -47,7 +48,7 @@ class JobController extends AbstractController
                 !isset($aPostedDatas['name'      ]) || strlen($aPostedDatas['name'      ]) > 10 ||
                 !isset($aPostedDatas['user'      ]) || strlen($aPostedDatas['user'      ]) > 10
             ) {
-                $this->addFlashMessage('Un ou plusieurs champs n\'ont pas été renseignés ou dépassent la longueur maximale autorisé');
+                $this->addFlashMessage('Un ou plusieurs champs n\'ont pas été renseignés ou dépassent la longueur maximale autorisée');
 
                 header('Location: /wisi/job');
                 exit;
@@ -82,17 +83,29 @@ class JobController extends AbstractController
 
 
     /**
-     * @TODO : à terminer
+     * Modifie la quantité de jobs à afficher dans l'onglet Jobs
+     *
      * @throws \Exception
      */
     public function displayAction()
     {
+        $oServiceParams = new Params();
+
         if (!empty($_POST)) {
 
             $aPostedDatas = Router::getPostValues();
 
             if (!isset($aPostedDatas['number']) || !is_numeric($aPostedDatas['number']) ||
                 $aPostedDatas['number'] > 15 || $aPostedDatas['number'] <= 0) {
+                $this->addFlashMessage('La quantité de jobs ne peut pas être supérieur à 15 ou inférieur à 0');
+
+                header('Location: /wisi/job/display');
+                exit;
+            }
+
+            if(!$oServiceParams->updateJobsToDisplay($aPostedDatas['number'])) {
+                $this->addFlashMessage('La modification n\'a pas pu être effectuée, consultez le fichier de logs pour plus de détails');
+
                 header('Location: /wisi/job/display');
                 exit;
             }
@@ -103,6 +116,7 @@ class JobController extends AbstractController
             exit;
         }
 
+        $this->setVariables(['iJobs' => $oServiceParams->getQuantityJobsToDisplay()]);
         $this->render('job', 'display');
     }
 }

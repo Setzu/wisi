@@ -63,5 +63,4 @@ class MessageModel extends ConnectionModel
 
         return $aResult;
     }
-
 }
