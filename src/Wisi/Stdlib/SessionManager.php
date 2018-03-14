@@ -23,13 +23,16 @@ abstract class SessionManager
     const ICON_DANGER = 'glyphicon-remove';
     const ICON_SUCCESS = 'glyphicon-ok';
 
+    /**
+     * SessionManager constructor.
+     */
     public function __construct()
     {
         self::startSession();
     }
 
     /**
-     * Start the session
+     * Démarre la session
      *
      * @param int $expiration
      */
@@ -44,7 +47,7 @@ abstract class SessionManager
     }
 
     /**
-     * Get all session
+     * Récupère la session
      *
      * @return array
      */
@@ -54,7 +57,7 @@ abstract class SessionManager
     }
 
     /**
-     * Unset the key $key in session
+     * Détruit la clé $key de la session
      *
      * @param $key
      * @return $this
@@ -71,7 +74,7 @@ abstract class SessionManager
     }
 
     /**
-     * Stock the flashmessages in session
+     * Enregistre les flash messages en session
      *
      * @param $message
      * @param bool|true $error
@@ -94,7 +97,7 @@ abstract class SessionManager
     }
 
     /**
-     * Display flash messages and removes them from the session
+     * Affiche les flash messages et les supprimes de la session
      *
      * @return string
      */
@@ -133,7 +136,7 @@ abstract class SessionManager
     }
 
     /**
-     * Display all alerts
+     * Affiche toutes les alertes
      */
     public static function alerts()
     {

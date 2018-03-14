@@ -9,16 +9,16 @@ $(function () {
         if (_confirm == true) {
             $.ajax({
                 method: 'POST',
-                url: '/apps/wisi/public/system/delete',
+                url: '/wisi/system/delete',
                 data: {
                     nmsys: $('#select-update').val()
                 },
                 dataType: 'html',
                 success: function (data) {
                     if (data === 'false') {
-                        document.location.href = "/apps/wisi/public/system/update";
+                        document.location.href = "/wisi/system/update";
                     } else {
-                        document.location.href = "/apps/wisi/public/index";
+                        document.location.href = "/wisi/accueil";
                     }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

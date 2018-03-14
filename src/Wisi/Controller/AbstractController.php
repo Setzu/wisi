@@ -14,7 +14,7 @@ use Wisi\Stdlib\SessionManager;
 abstract class AbstractController extends SessionManager
 {
 
-    const DEFAULT_DIRECTORY = 'index';
+    const DEFAULT_DIRECTORY = 'accueil';
     const DEFAULT_VIEW = 'index';
 
     abstract function indexAction();

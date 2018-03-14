@@ -6,7 +6,7 @@ $(function () {
         $.ajax({
             async: true,
             method: 'POST',
-            url: '/apps/wisi/public/index/messages',
+            url: '/wisi/accueil/messages',
             data: {
                 action: 'messages'
             },

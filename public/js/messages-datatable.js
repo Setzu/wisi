@@ -1,13 +1,13 @@
 $(function() {
     function format(d) {
-        return 'Priorité du système : ' + d[0] + '<br>' +
-            'Salary: ' + d.salary;
+        return $(d[6]).show();
     }
 
     var messages = $('table#messages').DataTable({
         "order": [[0, "asc"]],
         // Définir ici autant de lignes que le nombre de <th> du tableau
         "columns": [
+            null,
             null,
             null,
             null,

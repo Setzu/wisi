@@ -1,7 +1,7 @@
 $(function() {
     $.ajax({
         method: 'POST',
-        url: '/apps/wisi/public/index/status',
+        url: '/wisi/accueil/status',
         data: {
             action: 'messages'
         },

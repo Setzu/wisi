@@ -14,7 +14,7 @@ use Wisi\Services\Job;
 use Wisi\Services\Message;
 use Wisi\Services\System;
 
-class IndexController extends AbstractController
+class AccueilController extends AbstractController
 {
 
     const ALERT_CPU = 'cpu';
@@ -43,7 +43,7 @@ class IndexController extends AbstractController
         if (!empty($_POST)) {
             $oConnectionService = new Connection();
             $aConnectionsList = $oConnectionService->getAllConnections();
-            $aMainInfos = [];
+            $aMainInfos = $aPing = [];
 
             // On récupère les messages QSYSOPR ainsi que les infos sur l'utilisation des disques et de l'UC pour chaques systèmes
             foreach ($aConnectionsList as $aSystem) {
@@ -82,9 +82,9 @@ class IndexController extends AbstractController
                 'aMainInfos' => $aMainInfos
             ]);
 
-            return require_once __DIR__ . '/../View/index/messages.php';
+            return require_once __DIR__ . '/../View/accueil/messages.php';
         } else {
-            header('location: /apps/wisi/public/index');
+            header('location: /wisi/accueil');
             exit;
         }
     }
@@ -115,9 +115,9 @@ class IndexController extends AbstractController
                 'aJobs' => $aJobsList
             ]);
 
-            return require __DIR__ . '/../View/index/jobs.php';
+            return require __DIR__ . '/../View/accueil/jobs.php';
         } else {
-            header('location: /apps/wisi/public/index');
+            header('location: /wisi/accueil');
             exit;
         }
     }
@@ -149,7 +149,7 @@ class IndexController extends AbstractController
 
             return;
         } else {
-            header('location: /apps/wisi/public/index');
+            header('location: /wisi/accueil');
             exit;
         }
     }

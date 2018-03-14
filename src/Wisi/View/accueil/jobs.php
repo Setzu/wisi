@@ -48,4 +48,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?= '/apps/wisi/public/js/jobs-datatable.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/wisi/js/jobs-datatable.js'; ?>"></script>

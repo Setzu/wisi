@@ -12,19 +12,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="<?= '/apps/wisi/public/img/favicon.png'; ?>"/>
+    <link rel="icon" href="<?= '/wisi/img/favicon.png'; ?>"/>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= '/apps/wisi/public/css/global.css'; ?>">
-    <link rel="stylesheet" type="text/css" href="<?= '/apps/wisi/public/css/lib/jquery.dataTables.min.css'; ?>">
-    <link rel="stylesheet" type="text/css" href="<?= '/apps/wisi/public/css/lib/jquery-ui.min.css'; ?>">
-    <link rel="stylesheet" type="text/css" href="<?= '/apps/wisi/public/css/lib/bootstrap.min.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?= '/wisi/css/global.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?= '/wisi/css/lib/jquery.dataTables.min.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?= '/wisi/css/lib/jquery-ui.min.css'; ?>">
+    <link rel="stylesheet" type="text/css" href="<?= '/wisi/css/lib/bootstrap.min.css'; ?>">
 
     <!-- JS -->
-    <script type="text/javascript" src="<?= '/apps/wisi/public/js/lib/jquery-3.3.1.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/apps/wisi/public/js/lib/jquery-ui.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/apps/wisi/public/js/lib/jquery.canvasjs.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/apps/wisi/public/js/lib/jquery-dataTables.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/wisi/js/lib/jquery-3.3.1.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/wisi/js/lib/jquery-ui.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/wisi/js/lib/jquery.canvasjs.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/wisi/js/lib/jquery-dataTables.min.js'; ?>"></script>
 </head>
 
 <body>
@@ -32,8 +32,8 @@
 <header>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/apps/wisi/public/index" style="float: left; padding-top: 5px;">
-                <img src="/apps/wisi/public/img/gfp_logo.png" alt="logo gfp">
+            <a class="navbar-brand" href="/wisi/" style="float: left; padding-top: 5px;">
+                <img src="/wisi/img/gfp_logo.png" alt="logo gfp">
             </a>
             <?= '<h4 class="header-date">' . date('d/m/Y H:i:s') . '</h4>';?>
         </div>

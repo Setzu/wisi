@@ -51,7 +51,6 @@ class ConnectionModel
         $this->setConnexion();
     }
 
-
     /**
      * @return mixed
      */

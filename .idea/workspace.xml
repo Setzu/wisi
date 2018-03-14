@@ -4,6 +4,7 @@
     <list default="true" id="92eac746-da41-448f-b577-34305174aa6b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/public/js/delete-system.js" afterPath="$PROJECT_DIR$/public/js/delete-system.js" />
       <change beforePath="$PROJECT_DIR$/public/js/load-jobs.js" afterPath="$PROJECT_DIR$/public/js/load-jobs.js" />
       <change beforePath="$PROJECT_DIR$/public/js/load-messages.js" afterPath="$PROJECT_DIR$/public/js/load-messages.js" />
@@ -21,6 +22,19 @@
       <change beforePath="$PROJECT_DIR$/src/Wisi/View/layout/layout.php" afterPath="$PROJECT_DIR$/src/Wisi/View/layout/layout.php" />
       <change beforePath="$PROJECT_DIR$/src/Wisi/View/system/index.php" afterPath="$PROJECT_DIR$/src/Wisi/View/system/index.php" />
       <change beforePath="$PROJECT_DIR$/src/Wisi/View/system/update.php" afterPath="$PROJECT_DIR$/src/Wisi/View/system/update.php" />
+=======
+      <change beforePath="$PROJECT_DIR$/public/js/messages-datatable.js" afterPath="$PROJECT_DIR$/public/js/messages-datatable.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/test-connection.js" afterPath="$PROJECT_DIR$/public/js/test-connection.js" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Services/Logs.php" afterPath="$PROJECT_DIR$/src/Wisi/Services/Logs.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" afterPath="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" afterPath="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/View/index/index.php" afterPath="$PROJECT_DIR$/src/Wisi/View/index/index.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/View/index/messages.php" afterPath="$PROJECT_DIR$/src/Wisi/View/index/messages.php" />
+>>>>>>> origin/master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,21 +43,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="display.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/display.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+=======
+      <file leaf-file-name="messages-datatable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/messages-datatable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +75,28 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/messages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1521019885933" expanded="true" signature="4971:5576" ph="..." />
+                <marker date="1521019885933" expanded="true" signature="5019:5427" ph="..." />
+                <marker date="1521019885933" expanded="true" signature="5064:5378" ph="..." />
+                <marker date="1521019885933" expanded="true" signature="5475:5574" ph="..." />
+                <marker date="1521019885933" expanded="true" signature="5475:5576" ph="..." />
+                <marker date="1521019885933" expanded="true" signature="5520:5574" ph="..." />
+>>>>>>> origin/master
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wisi/View/layout/layout.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,36 +112,97 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="704">
               <caret line="94" column="58" lean-forward="false" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+=======
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/update.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-350">
               <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding />
+=======
+      <file leaf-file-name="MessageModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10">
+              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <marker date="1521021189541" expanded="true" signature="777:809" ph="SELECT * FRO... SSYQSOP0" />
+                <marker date="1521021189541" expanded="true" signature="777:827" ph="SELECT * FRO... SSYQSOP0" />
+                <marker date="1521021189541" expanded="true" signature="777:837" ph="SELECT * FRO... SSYQSOP0" />
+              </folding>
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
+=======
+      <file leaf-file-name="ConnectionModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-357">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <element signature="e#1374#1406#0#PHP" expanded="false" />
+                <element signature="e#1411#1484#0#PHP" expanded="false" />
+                <element signature="e#1490#1531#0#PHP" expanded="false" />
+                <element signature="e#1536#1623#0#PHP" expanded="false" />
+                <element signature="e#1629#1661#0#PHP" expanded="false" />
+                <element signature="e#1666#1731#0#PHP" expanded="false" />
+                <element signature="e#1737#1774#0#PHP" expanded="false" />
+                <element signature="e#1779#1850#0#PHP" expanded="false" />
+                <element signature="e#1856#1888#0#PHP" expanded="false" />
+                <element signature="e#1893#1958#0#PHP" expanded="false" />
+                <element signature="e#1964#2001#0#PHP" expanded="false" />
+                <element signature="e#2006#2077#0#PHP" expanded="false" />
+                <element signature="e#2083#2115#0#PHP" expanded="false" />
+                <element signature="e#2120#2193#0#PHP" expanded="false" />
+                <element signature="e#2199#2240#0#PHP" expanded="false" />
+                <element signature="e#2245#2332#0#PHP" expanded="false" />
+                <element signature="e#2338#2369#0#PHP" expanded="false" />
+                <element signature="e#2374#2449#0#PHP" expanded="false" />
+                <marker date="1521021189557" expanded="true" signature="3582:3797" ph="INSERT INTO GFPSYSGES.SSYPR1P0... " />
+                <marker date="1521021189557" expanded="true" signature="5508:5568" ph="SELECT count... SSYPR1P0" />
+                <marker date="1521021189557" expanded="true" signature="6653:6773" ph="SELECT NMSYS... SSYPR1P0" />
+                <marker date="1521021189557" expanded="true" signature="8717:8844" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+                <marker date="1521021189557" expanded="true" signature="10162:10229" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+              </folding>
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+=======
+      <file leaf-file-name="logs.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/logs/logs.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -110,9 +211,12 @@
     </leaf>
   </component>
   <component name="FindInProjectRecents">
+<<<<<<< HEAD
     <findStrings>
       <find>//</find>
     </findStrings>
+=======
+>>>>>>> origin/master
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
@@ -123,6 +227,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/data/logs/logs.txt" />
         <option value="$PROJECT_DIR$/src/Wisi/Services/Utils.php" />
         <option value="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" />
@@ -139,11 +244,31 @@
         <option value="$PROJECT_DIR$/src/Wisi/View/index/jobs.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/index/messages.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/index/index.php" />
+=======
+        <option value="$PROJECT_DIR$/src/Wisi/Services/Utils.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/View/job/index.php" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/src/Wisi/View/job/display.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/job/index.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/layout/layout.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/system/index.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Wisi/View/system/update.php" />
+=======
+        <option value="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" />
+        <option value="$PROJECT_DIR$/config/bdd.php" />
+        <option value="$PROJECT_DIR$/public/js/test-connection.js" />
+        <option value="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Services/Logs.php" />
+        <option value="$PROJECT_DIR$/data/logs/logs.txt" />
+        <option value="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" />
+        <option value="$PROJECT_DIR$/public/js/messages-datatable.js" />
+        <option value="$PROJECT_DIR$/src/Wisi/View/index/index.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/View/index/messages.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/public/index.php" />
       </list>
@@ -206,13 +331,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
@@ -230,6 +359,7 @@
               <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -272,11 +402,14 @@
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="system" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+=======
+>>>>>>> origin/master
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,12 +440,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520929058728</updated>
+<<<<<<< HEAD
       <workItem from="1520929072138" duration="5539000" />
+=======
+      <workItem from="1520929072138" duration="4370000" />
+      <workItem from="1521015230798" duration="9535000" />
+>>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="15649000" />
+=======
+    <option name="totallyTimeSpent" value="37873000" />
+>>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="172" y="0" width="1922" height="958" extended-state="6" />
@@ -345,10 +487,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/data/logs.php" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -360,6 +505,9 @@
     <entry file="file://$PROJECT_DIR$/public/js/load-alert.js" />
     <entry file="file://$PROJECT_DIR$/public/js/reload.js" />
     <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Router.php">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/error/404.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
           <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
@@ -367,6 +515,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/Model/SystemModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -376,6 +525,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Logs.php">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/tab.js">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
@@ -406,6 +558,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/Model/JobModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -429,6 +582,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/load-alert.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/reload.js" />
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/layout/layout.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="26" />
@@ -451,6 +609,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -473,6 +632,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/bdd.php">
+=======
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
@@ -512,6 +674,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/js/jobs-datatable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -521,6 +684,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/load-jobs.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/add-system.js">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
@@ -528,6 +694,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/js/load-messages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -537,6 +704,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/load-status.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/job-follow.js">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
           <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
@@ -565,6 +735,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/js/update-system.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -574,6 +745,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tab.js">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Job.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
@@ -589,6 +763,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/JobController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -598,6 +773,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Message.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
@@ -640,6 +818,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/AbstractController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-333">
           <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
           <folding />
@@ -653,19 +832,29 @@
           <folding>
             <element signature="e#1472#1537#0#PHP" expanded="false" />
           </folding>
+=======
+        <state relative-caret-position="408">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Layout.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="551">
+          <caret line="47" column="74" lean-forward="false" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Module.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -677,51 +866,176 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="306">
+          <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/alertes.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="493">
           <caret line="34" column="59" lean-forward="true" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding />
+=======
+        <state relative-caret-position="240">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="323">
           <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+=======
+        <state relative-caret-position="544">
+          <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/alertes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="34" column="59" lean-forward="true" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/SystemModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <marker date="1520937736149" expanded="true" signature="701:824" ph="SELECT ISRCR... SSYS01P0" />
+            <marker date="1520937736149" expanded="true" signature="1859:1912" ph="SELECT PCPRO... SSYS02P0" />
+            <marker date="1520937736149" expanded="true" signature="3006:3098" ph="SELECT NMSYS... SSYPR1P0" />
+            <marker date="1520937736149" expanded="true" signature="4154:4205" ph="DELETE FROM GFPSYSGES.SSYPR1P0... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/AbstractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/jobs.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="765">
           <caret line="50" column="58" lean-forward="false" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+=======
+        <state relative-caret-position="347">
+          <caret line="58" column="44" lean-forward="true" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/test-connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/logs/test.txt" />
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Logs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44">
           <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/display.php">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="1428">
+          <caret line="89" column="9" lean-forward="false" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/JobModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="147" column="20" lean-forward="false" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
+          <folding>
+            <marker date="1520851334214" expanded="true" signature="765:1004" ph="SELECT NMSYS... SSYJBSP0" />
+            <marker date="1520851334214" expanded="true" signature="2030:2147" ph="INSERT INTO GFPSYSGES.SSYPR3P0... " />
+            <marker date="1520851334214" expanded="true" signature="3220:3307" ph="SELECT NMSYS... SSYPR3P0" />
+            <marker date="1520851334214" expanded="true" signature="4189:4329" ph="SELECT count... SSYJBSP0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1521016400477" expanded="true" signature="2589:2595" ph=" " />
+            <marker date="1521016400477" expanded="true" signature="2595:2601" ph=" " />
+            <marker date="1521016400477" expanded="true" signature="2601:2607" ph=" " />
+            <marker date="1521016400477" expanded="true" signature="3623:3658" ph="..." />
+>>>>>>> origin/master
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/display.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/load-messages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
@@ -730,11 +1044,19 @@
             <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/layout/layout.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="330">
           <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding />
@@ -745,30 +1067,117 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
           <caret line="94" column="58" lean-forward="false" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
+=======
+        <state relative-caret-position="-544">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/messages-datatable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-350">
           <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <marker date="1521021189541" expanded="true" signature="777:809" ph="SELECT * FRO... SSYQSOP0" />
+            <marker date="1521021189541" expanded="true" signature="777:827" ph="SELECT * FRO... SSYQSOP0" />
+            <marker date="1521021189541" expanded="true" signature="777:837" ph="SELECT * FRO... SSYQSOP0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#1374#1406#0#PHP" expanded="false" />
+            <element signature="e#1411#1484#0#PHP" expanded="false" />
+            <element signature="e#1490#1531#0#PHP" expanded="false" />
+            <element signature="e#1536#1623#0#PHP" expanded="false" />
+            <element signature="e#1629#1661#0#PHP" expanded="false" />
+            <element signature="e#1666#1731#0#PHP" expanded="false" />
+            <element signature="e#1737#1774#0#PHP" expanded="false" />
+            <element signature="e#1779#1850#0#PHP" expanded="false" />
+            <element signature="e#1856#1888#0#PHP" expanded="false" />
+            <element signature="e#1893#1958#0#PHP" expanded="false" />
+            <element signature="e#1964#2001#0#PHP" expanded="false" />
+            <element signature="e#2006#2077#0#PHP" expanded="false" />
+            <element signature="e#2083#2115#0#PHP" expanded="false" />
+            <element signature="e#2120#2193#0#PHP" expanded="false" />
+            <element signature="e#2199#2240#0#PHP" expanded="false" />
+            <element signature="e#2245#2332#0#PHP" expanded="false" />
+            <element signature="e#2338#2369#0#PHP" expanded="false" />
+            <element signature="e#2374#2449#0#PHP" expanded="false" />
+            <marker date="1521021189557" expanded="true" signature="3582:3797" ph="INSERT INTO GFPSYSGES.SSYPR1P0... " />
+            <marker date="1521021189557" expanded="true" signature="5508:5568" ph="SELECT count... SSYPR1P0" />
+            <marker date="1521021189557" expanded="true" signature="6653:6773" ph="SELECT NMSYS... SSYPR1P0" />
+            <marker date="1521021189557" expanded="true" signature="8717:8844" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+            <marker date="1521021189557" expanded="true" signature="10162:10229" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+          </folding>
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+=======
+        <state relative-caret-position="374">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1521019885933" expanded="true" signature="4971:5576" ph="..." />
+            <marker date="1521019885933" expanded="true" signature="5019:5427" ph="..." />
+            <marker date="1521019885933" expanded="true" signature="5064:5378" ph="..." />
+            <marker date="1521019885933" expanded="true" signature="5475:5574" ph="..." />
+            <marker date="1521019885933" expanded="true" signature="5475:5576" ph="..." />
+            <marker date="1521019885933" expanded="true" signature="5520:5574" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>

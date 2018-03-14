@@ -34,9 +34,6 @@ class SystemModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return [];
         }
 
@@ -76,9 +73,6 @@ class SystemModel extends ConnectionModel
         $con = $this->getConnexion();
 
         if (!$con instanceof \PDO) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
             return [];
         }
 

@@ -9,10 +9,10 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
-        <a href="/apps/wisi/public/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
+        <a href="/wisi/accueil" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
         <h3 class="title-form">Affichage des jobs</h3>
         <hr>
-        <form action="/apps/wisi/public/job/display" role="form" method="post" class="form-horizontal">
+        <form action="/wisi/job/display" role="form" method="post" class="form-horizontal">
             <div class="form-group">
                 <label for="number" class="col-sm-6 control-label">Quantité de Jobs à récupérer par machines :</label>
                 <div class="col-sm-2">
