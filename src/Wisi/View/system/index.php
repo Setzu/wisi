@@ -10,6 +10,7 @@
     <div class="col-md-6 col-md-offset-3 cadre-form">
         <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
         <h3 class="title-form">Ajouter un système</h3>
+        <p style="border: 1px solid #ac2925; padding: 5px;">Faire une demande d'ouverture de flux à l'infra avant d'ajouter un système.</p>
         <hr>
         <form action="/system" method="post" role="form" id="addsystem" class="form-horizontal">
             <div class="form-group">

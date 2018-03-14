@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="number" class="col-sm-6 control-label">Quantité de Jobs à récupérer par machines :</label>
                 <div class="col-sm-2">
-                    <input type="number" name="number" required="required" placeholder="3" value="3" min="1" max="15" class="form-control">
+                    <input type="number" name="number" required="required" placeholder="3" value="<?= $this->iJobs; ?>" min="1" max="15" class="form-control">
                 </div>
             </div>
             <div class="form-group">

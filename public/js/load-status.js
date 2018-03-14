@@ -19,13 +19,13 @@ $(function() {
                         legendText: element.SYSNAME,
                         dataPoints: [
                             {x: 1, y: parseInt(v.ISRCRUSON), label: "Connected users"},
-                            {x: 2, y: parseInt(v.BATJBSWMSG), label: "Messages wait"},
-                            {x: 3, y: parseInt(v.BATJOBSRUN), label: "Running"},
-                            {x: 4, y: parseInt(v.BATJBSHRUN), label: "Hold"},
-                            {x: 5, y: parseInt(v.BATJHLDJBQ), label: "Hold JobQ"},
-                            {x: 6, y: parseInt(v.BATJBQHLD), label: "On JobQ hold"},
-                            {x: 7, y: parseInt(v.BATJBUNAJQ), label: "Unassigned JobQ"},
-                            {x: 8, y: parseInt(v.BATENDWPRT) / 1000, label: "Ended OutQ"}
+                            {x: 2, y: parseInt(v.BATJOBSRUN), label: "Running"},
+                            {x: 3, y: parseInt(v.BATJBSHRUN), label: "Hold"},
+                            {x: 4, y: parseInt(v.BATJHLDJBQ), label: "Hold JobQ"},
+                            {x: 5, y: parseInt(v.BATJBQHLD), label: "On JobQ hold"},
+                            {x: 6, y: parseInt(v.BATJBUNAJQ), label: "Unassigned JobQ"},
+                            {x: 7, y: parseInt(v.BATENDWPRT) / 1000, label: "Ended OutQ"}
+                            // {x: 8, y: parseInt(v.BATJBSWMSG), label: "Messages wait"}
                         ]
                     });
                 });

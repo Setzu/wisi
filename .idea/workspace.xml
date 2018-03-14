@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92eac746-da41-448f-b577-34305174aa6b" name="Default" comment="">
+    <list default="true" id="7c1a7e52-cc33-4dbd-a9b7-f1b0d63cf496" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Wisi/Model/ParamsModel.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Wisi/Services/Params.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
-      <change beforePath="$PROJECT_DIR$/public/js/messages-datatable.js" afterPath="$PROJECT_DIR$/public/js/messages-datatable.js" />
-      <change beforePath="$PROJECT_DIR$/public/js/test-connection.js" afterPath="$PROJECT_DIR$/public/js/test-connection.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/load-status.js" afterPath="$PROJECT_DIR$/public/js/load-status.js" />
       <change beforePath="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" afterPath="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Controller/JobController.php" afterPath="$PROJECT_DIR$/src/Wisi/Controller/JobController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/Controller/SystemController.php" afterPath="$PROJECT_DIR$/src/Wisi/Controller/SystemController.php" />
       <change beforePath="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" afterPath="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/Services/Logs.php" afterPath="$PROJECT_DIR$/src/Wisi/Services/Logs.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" afterPath="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" afterPath="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/View/index/index.php" afterPath="$PROJECT_DIR$/src/Wisi/View/index/index.php" />
-      <change beforePath="$PROJECT_DIR$/src/Wisi/View/index/messages.php" afterPath="$PROJECT_DIR$/src/Wisi/View/index/messages.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/View/job/display.php" afterPath="$PROJECT_DIR$/src/Wisi/View/job/display.php" />
+      <change beforePath="$PROJECT_DIR$/src/Wisi/View/system/index.php" afterPath="$PROJECT_DIR$/src/Wisi/View/system/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,99 +24,12 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="messages-datatable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/messages-datatable.js">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/messages.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1521019885933" expanded="true" signature="4971:5576" ph="..." />
-                <marker date="1521019885933" expanded="true" signature="5019:5427" ph="..." />
-                <marker date="1521019885933" expanded="true" signature="5064:5378" ph="..." />
-                <marker date="1521019885933" expanded="true" signature="5475:5574" ph="..." />
-                <marker date="1521019885933" expanded="true" signature="5475:5576" ph="..." />
-                <marker date="1521019885933" expanded="true" signature="5520:5574" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-              <folding>
-                <marker date="1521021189541" expanded="true" signature="777:809" ph="SELECT * FRO... SSYQSOP0" />
-                <marker date="1521021189541" expanded="true" signature="777:827" ph="SELECT * FRO... SSYQSOP0" />
-                <marker date="1521021189541" expanded="true" signature="777:837" ph="SELECT * FRO... SSYQSOP0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding>
-                <element signature="e#1374#1406#0#PHP" expanded="false" />
-                <element signature="e#1411#1484#0#PHP" expanded="false" />
-                <element signature="e#1490#1531#0#PHP" expanded="false" />
-                <element signature="e#1536#1623#0#PHP" expanded="false" />
-                <element signature="e#1629#1661#0#PHP" expanded="false" />
-                <element signature="e#1666#1731#0#PHP" expanded="false" />
-                <element signature="e#1737#1774#0#PHP" expanded="false" />
-                <element signature="e#1779#1850#0#PHP" expanded="false" />
-                <element signature="e#1856#1888#0#PHP" expanded="false" />
-                <element signature="e#1893#1958#0#PHP" expanded="false" />
-                <element signature="e#1964#2001#0#PHP" expanded="false" />
-                <element signature="e#2006#2077#0#PHP" expanded="false" />
-                <element signature="e#2083#2115#0#PHP" expanded="false" />
-                <element signature="e#2120#2193#0#PHP" expanded="false" />
-                <element signature="e#2199#2240#0#PHP" expanded="false" />
-                <element signature="e#2245#2332#0#PHP" expanded="false" />
-                <element signature="e#2338#2369#0#PHP" expanded="false" />
-                <element signature="e#2374#2449#0#PHP" expanded="false" />
-                <marker date="1521021189557" expanded="true" signature="3582:3797" ph="INSERT INTO GFPSYSGES.SSYPR1P0... " />
-                <marker date="1521021189557" expanded="true" signature="5508:5568" ph="SELECT count... SSYPR1P0" />
-                <marker date="1521021189557" expanded="true" signature="6653:6773" ph="SELECT NMSYS... SSYPR1P0" />
-                <marker date="1521021189557" expanded="true" signature="8717:8844" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
-                <marker date="1521021189557" expanded="true" signature="10162:10229" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logs.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/logs/logs.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -140,23 +50,28 @@
       <list>
         <option value="$PROJECT_DIR$/src/Wisi/Services/Utils.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/job/index.php" />
-        <option value="$PROJECT_DIR$/src/Wisi/View/job/display.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/system/update.php" />
-        <option value="$PROJECT_DIR$/src/Wisi/View/system/index.php" />
         <option value="$PROJECT_DIR$/src/Wisi/Model/SystemModel.php" />
         <option value="$PROJECT_DIR$/config/bdd.php" />
         <option value="$PROJECT_DIR$/public/js/test-connection.js" />
         <option value="$PROJECT_DIR$/src/Wisi/Stdlib/Router.php" />
-        <option value="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/src/Wisi/Services/Logs.php" />
-        <option value="$PROJECT_DIR$/data/logs/logs.txt" />
         <option value="$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php" />
         <option value="$PROJECT_DIR$/public/js/messages-datatable.js" />
         <option value="$PROJECT_DIR$/src/Wisi/View/index/index.php" />
         <option value="$PROJECT_DIR$/src/Wisi/View/index/messages.php" />
-        <option value="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" />
-        <option value="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/public/js/load-status.js" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/JobModel.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php" />
+        <option value="$PROJECT_DIR$/data/logs/logs.txt" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/MessageModel.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Model/ParamsModel.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Services/Params.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/Controller/JobController.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/View/job/display.php" />
+        <option value="$PROJECT_DIR$/src/Wisi/View/system/index.php" />
       </list>
     </option>
   </component>
@@ -227,11 +142,6 @@
             <path>
               <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -243,14 +153,64 @@
             <path>
               <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Services" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="job" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wisi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Wisi" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="system" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,30 +247,42 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37873000" />
+    <option name="totallyTimeSpent" value="42471000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="172" y="0" width="1922" height="958" extended-state="6" />
+    <frame x="-1" y="0" width="1922" height="958" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17135416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827103" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827103" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,20 +298,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/error/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/tab.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -373,15 +331,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/delete-system.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/load-status.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="340">
+          <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -442,13 +394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/JobController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Job.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -461,14 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="319" column="20" lean-forward="false" selection-start-line="319" selection-start-column="20" selection-end-line="319" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -486,31 +423,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="47" column="74" lean-forward="false" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/display.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/jobs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -525,19 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/SystemModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <marker date="1520937736149" expanded="true" signature="701:824" ph="SELECT ISRCR... SSYS01P0" />
-            <marker date="1520937736149" expanded="true" signature="1859:1912" ph="SELECT PCPRO... SSYS02P0" />
-            <marker date="1520937736149" expanded="true" signature="3006:3098" ph="SELECT NMSYS... SSYPR1P0" />
-            <marker date="1520937736149" expanded="true" signature="4154:4205" ph="DELETE FROM GFPSYSGES.SSYPR1P0... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="58" column="44" lean-forward="true" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/test-connection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -580,45 +476,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Logs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="89" column="9" lean-forward="false" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/JobModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="147" column="20" lean-forward="false" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
-          <folding>
-            <marker date="1520851334214" expanded="true" signature="765:1004" ph="SELECT NMSYS... SSYJBSP0" />
-            <marker date="1520851334214" expanded="true" signature="2030:2147" ph="INSERT INTO GFPSYSGES.SSYPR3P0... " />
-            <marker date="1520851334214" expanded="true" signature="3220:3307" ph="SELECT NMSYS... SSYPR3P0" />
-            <marker date="1520851334214" expanded="true" signature="4189:4329" ph="SELECT count... SSYJBSP0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/SessionManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1521016400477" expanded="true" signature="2589:2595" ph=" " />
-            <marker date="1521016400477" expanded="true" signature="2595:2601" ph=" " />
-            <marker date="1521016400477" expanded="true" signature="2601:2607" ph=" " />
-            <marker date="1521016400477" expanded="true" signature="3623:3658" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -630,21 +492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-544">
           <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,72 +507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <marker date="1521021189541" expanded="true" signature="777:809" ph="SELECT * FRO... SSYQSOP0" />
-            <marker date="1521021189541" expanded="true" signature="777:827" ph="SELECT * FRO... SSYQSOP0" />
-            <marker date="1521021189541" expanded="true" signature="777:837" ph="SELECT * FRO... SSYQSOP0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#1374#1406#0#PHP" expanded="false" />
-            <element signature="e#1411#1484#0#PHP" expanded="false" />
-            <element signature="e#1490#1531#0#PHP" expanded="false" />
-            <element signature="e#1536#1623#0#PHP" expanded="false" />
-            <element signature="e#1629#1661#0#PHP" expanded="false" />
-            <element signature="e#1666#1731#0#PHP" expanded="false" />
-            <element signature="e#1737#1774#0#PHP" expanded="false" />
-            <element signature="e#1779#1850#0#PHP" expanded="false" />
-            <element signature="e#1856#1888#0#PHP" expanded="false" />
-            <element signature="e#1893#1958#0#PHP" expanded="false" />
-            <element signature="e#1964#2001#0#PHP" expanded="false" />
-            <element signature="e#2006#2077#0#PHP" expanded="false" />
-            <element signature="e#2083#2115#0#PHP" expanded="false" />
-            <element signature="e#2120#2193#0#PHP" expanded="false" />
-            <element signature="e#2199#2240#0#PHP" expanded="false" />
-            <element signature="e#2245#2332#0#PHP" expanded="false" />
-            <element signature="e#2338#2369#0#PHP" expanded="false" />
-            <element signature="e#2374#2449#0#PHP" expanded="false" />
-            <marker date="1521021189557" expanded="true" signature="3582:3797" ph="INSERT INTO GFPSYSGES.SSYPR1P0... " />
-            <marker date="1521021189557" expanded="true" signature="5508:5568" ph="SELECT count... SSYPR1P0" />
-            <marker date="1521021189557" expanded="true" signature="6653:6773" ph="SELECT NMSYS... SSYPR1P0" />
-            <marker date="1521021189557" expanded="true" signature="8717:8844" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
-            <marker date="1521021189557" expanded="true" signature="10162:10229" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/logs/logs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wisi/View/index/messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
           <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1521019885933" expanded="true" signature="4971:5576" ph="..." />
-            <marker date="1521019885933" expanded="true" signature="5019:5427" ph="..." />
-            <marker date="1521019885933" expanded="true" signature="5064:5378" ph="..." />
-            <marker date="1521019885933" expanded="true" signature="5475:5574" ph="..." />
-            <marker date="1521019885933" expanded="true" signature="5475:5576" ph="..." />
-            <marker date="1521019885933" expanded="true" signature="5520:5574" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,6 +518,167 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/load-status.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Stdlib/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/JobModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="180" column="5" lean-forward="false" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="5" />
+          <folding>
+            <marker date="1520851334214" expanded="true" signature="765:1004" ph="SELECT NMSYS... SSYJBSP0" />
+            <marker date="1520851334214" expanded="true" signature="2030:2147" ph="INSERT INTO GFPSYSGES.SSYPR3P0... " />
+            <marker date="1520851334214" expanded="true" signature="3220:3307" ph="SELECT NMSYS... SSYPR3P0" />
+            <marker date="1520851334214" expanded="true" signature="4189:4329" ph="SELECT count... SSYJBSP0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ConnectionModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+          <folding>
+            <marker date="1521025415913" expanded="true" signature="3582:3797" ph="INSERT INTO GFPSYSGES.SSYPR1P0... " />
+            <marker date="1521025415913" expanded="true" signature="5508:5568" ph="SELECT count... SSYPR1P0" />
+            <marker date="1521025415913" expanded="true" signature="6653:6773" ph="SELECT NMSYS... SSYPR1P0" />
+            <marker date="1521025415913" expanded="true" signature="8717:8844" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+            <marker date="1521025415913" expanded="true" signature="10162:10229" ph="UPDATE GFPSYSGES.SSYPR1P0... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Logs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="61" column="38" lean-forward="true" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/MessageModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+          <folding>
+            <marker date="1521041554328" expanded="true" signature="777:837" ph="SELECT * FRO... SSYQSOP0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/logs/logs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/ParamsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <marker date="1521042527248" expanded="true" signature="517:577" ph="SELECT JOB_T... SSYPR4P0" />
+            <marker date="1521042527248" expanded="true" signature="1453:1515" ph="UPDATE GFPSYSGES.SSYPR4P0... " />
+            <marker date="1521042527248" expanded="true" signature="1453:1530" ph="UPDATE GFPSYSGES.SSYPR4P0... " />
+            <marker date="1521042527248" expanded="true" signature="2638:2698" ph="UPDATE GFPSYSGES.SSYPR4P0... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Services/Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Controller/JobController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="30" selection-end-line="118" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/display.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/job/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+          <folding>
+            <marker date="1521038281400" expanded="true" signature="2710:2730" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/Model/SystemModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <marker date="1521025415913" expanded="true" signature="701:824" ph="SELECT ISRCR... SSYS01P0" />
+            <marker date="1521025415913" expanded="true" signature="1859:1912" ph="SELECT PCPRO... SSYS02P0" />
+            <marker date="1521025415913" expanded="true" signature="3006:3098" ph="SELECT NMSYS... SSYPR1P0" />
+            <marker date="1521025415913" expanded="true" signature="4154:4205" ph="DELETE FROM GFPSYSGES.SSYPR1P0... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wisi/View/system/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding />
         </state>
       </provider>

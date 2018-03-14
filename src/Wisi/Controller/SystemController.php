@@ -108,8 +108,6 @@ class SystemController extends AbstractController
     }
 
     /**
-     * @TODO : voir les priorités
-     *
      * @return mixed
      * @throws \Exception
      */

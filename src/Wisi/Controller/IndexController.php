@@ -12,6 +12,7 @@ namespace Wisi\Controller;
 use Wisi\Services\Connection;
 use Wisi\Services\Job;
 use Wisi\Services\Message;
+use Wisi\Services\Params;
 use Wisi\Services\System;
 
 class IndexController extends AbstractController
@@ -19,6 +20,7 @@ class IndexController extends AbstractController
 
     const ALERT_CPU = 'cpu';
     const ALERT_ASP = 'asp';
+    const DEFAULT_QUANTITY = 3;
 
     /**
      * @return mixed
@@ -101,11 +103,17 @@ class IndexController extends AbstractController
             $oConnectionService = new Connection();
             $aConnectionsList = $oConnectionService->getAllConnections();
             $aJobsList = [];
+            $oServiceParams = new Params();
+            $iQuantityJobsToDisplay = $oServiceParams->getQuantityJobsToDisplay();
+
+            if ($iQuantityJobsToDisplay == 0) {
+                $iQuantityJobsToDisplay = self::DEFAULT_QUANTITY;
+            }
 
             // On récupère les 3 jobs les plus gourmands en ressources (hors jobs QSYS) de chaque système
             foreach ($aConnectionsList as $aSystem) {
                 $oJob = new Job($aSystem);
-                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getHigherProcessUnitJobs(3);
+                $aJobsList[$aSystem['NMSYS']]['jobs'] = $oJob->getHigherProcessUnitJobs($iQuantityJobsToDisplay);
                 $aJobsList[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
                 $aJobsList[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
                 $aJobsList[$aSystem['NMSYS']]['SYSPTY'] = $aSystem['SYSPTY'];
