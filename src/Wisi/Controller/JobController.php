@@ -59,7 +59,7 @@ class JobController extends AbstractController
                 exit;
             }
 
-            $oJob = new Job();
+            $oJob = new Job($aPostedDatas['system']);
             $bReturn = $oJob->addJobFollow($aPostedDatas);
 
             if ($bReturn) {

@@ -105,43 +105,6 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
     }
 
     /**
-     * Select all required jobs
-     *
-     * @param string $system
-     * @return array
-     */
-    public function selectRequiredJobsBySystem($system)
-    {
-        $con = $this->getConnexion();
-
-        if (!$con instanceof \PDO) {
-            return [];
-        }
-
-        $query = 'SELECT NMSYS, SUBSYSTEM, JOBNAME, USERNAME FROM GFPSYSGES.SSYPR3P0 WHERE NMSYS = :NMSYS';
-
-        if (!$stmt = $con->prepare($query)) {
-            $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
-        }
-
-        try {
-            $stmt->bindParam(':NMSYS', $system);
-            $stmt->execute();
-            $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            $stmt->closeCursor();
-        } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
-
-            return [];
-        }
-
-        return $aResult;
-    }
-
-    /**
      * Récupère tous les jobs qui ne sont PAS en cours d'execution
      *
      * @param string $system
@@ -154,6 +117,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
         if (!$con instanceof \PDO) {
             return [];
         }
+
         $query = 'SELECT NMSYS, SUBSYSTEM, JOBNAME, USERNAME FROM GFPSYSGES.SSYPR3P0 AS PR3 WHERE NOT EXISTS (
 SELECT NMSYS, SUBSYSTEM, JOBNAME, JOBUSER FROM GFPSYSGES.SSYJBSP0 WHERE NMSYS = PR3.NMSYS AND JOBNAME = PR3.JOBNAME
 AND SUBSYSTEM = PR3.SUBSYSTEM AND JOBUSER = PR3.USERNAME

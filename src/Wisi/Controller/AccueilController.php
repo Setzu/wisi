@@ -56,13 +56,12 @@ class AccueilController extends AbstractController
             foreach ($aConnectionsList as $aSystem) {
                 $oMessage = new Message($aSystem);
                 $oSystem = new System($aSystem);
+                $oJob = new Job($aSystem);
                 $aMainInfos[$aSystem['NMSYS']]['MESSAGES'] = $oMessage->getMessagesQSYSOPR();
                 $aMainInfos[$aSystem['NMSYS']]['UC'] = $oSystem->getUCUtilisation();
-
                 $aMainInfos[$aSystem['NMSYS']]['ASP'] = $oSystem->getASPUtilisation();
 
                 // On récupère la liste des jobs obligatoires dans le fichier SSYPR3P0 (uniquement présent sur la DEV)
-                $oJob = new Job();
                 $aInactiveJobs = $oJob->getInactiveJobsBySystem($aSystem['NMSYS']);
 
                 // Ajout d'une alerte si l'un des job du fichier SSYPR3P0 n'a pas été trouvé dans SSYJBSP0
