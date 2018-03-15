@@ -86,33 +86,14 @@
                 <?php foreach ($this->aMainInfos as $system => $aInfos) { ?>
                     <?php if (is_array($aInfos) && array_key_exists('ALERTES', $aInfos) && is_array($aInfos['ALERTES']) && count($aInfos['ALERTES']) > 0) { ?>
                         <?php foreach ($aInfos['ALERTES'] as $v) { ?>
-                            <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
-                                <td class="detail"><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
-                                <td class="detail"><?= $v['SUBSYSTEM']; ?></td>
-                                <td class="detail"><?= 'Le job n\'a pas été trouvé dans le fichier SSYJBSP0'; ?></td>
-                                <td class="detail"><?= \Wisi\Services\Utils::formatDateToEU(); ?></td>
-                                <td class="detail"><?= utf8_encode($v['USERNAME']); ?></td>
-                                <td class="detail"><?= utf8_encode($v['JOBNAME']); ?></td>
-                                <td style="display: none;">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th>Type message</th>
-                                            <th>Sous-système</th>
-                                            <th>Message complémentaire</th>
-                                            <th>Statut</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td><?= $v['MSGTYPE']; ?></td>
-                                            <td><?= $v['SUBSYSTEM']; ?></td>
-                                            <td><?= utf8_encode(trim($v['MSGTEXT1'])); ?></td>
-                                            <td><?= $v['JOBSTATUS']; ?></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
+                            <tr style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
+                                <td><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
+                                <td><?= $v['SUBSYSTEM']; ?></td>
+                                <td><?= 'Le job n\'a pas été trouvé dans le fichier SSYJBSP0'; ?></td>
+                                <td><?= \Wisi\Services\Utils::formatDateToEU(); ?></td>
+                                <td><?= utf8_encode($v['USERNAME']); ?></td>
+                                <td><?= utf8_encode($v['JOBNAME']); ?></td>
+                                <td style="display: none;"></td>
                             </tr>
                         <? } ?>
                     <? } ?>
