@@ -14,12 +14,28 @@ use Wisi\Model\ParamsModel;
 class Params extends ParamsModel
 {
 
+    const DEFAULT_TIMER = 30;
+
     /**
      * @return int
      */
     public function getQuantityJobsToDisplay()
     {
         return parent::selectQuantityJobsToDisplay();
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimerRefresh()
+    {
+        $timer = parent::selectTimerRefresh();
+
+        if ($timer <= 0) {
+            $timer = self::DEFAULT_TIMER;
+        }
+
+        return $timer;
     }
 
     /**
@@ -47,8 +63,8 @@ class Params extends ParamsModel
     {
         $iTimer = (int) $timer;
 
-        if ($iTimer <= 30) {
-            Logs::add('Le timer ne peut pas être inférieur à 30 secondes. Timer renseigné : ' . $iTimer . ' in ' . __FILE__ . ' at line ' .__LINE__);
+        if ($iTimer === 0) {
+            Logs::add('Le timer ne peut pas être inférieur à 0 seconde. Timer renseigné : ' . $iTimer . ' in ' . __FILE__ . ' at line ' .__LINE__);
 
             return false;
         }

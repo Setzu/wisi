@@ -26,13 +26,9 @@ try {
                 <div class="page-not-found">
                     <h3 class="page-not-found">
                         <?php
-                        try {
-                            if (\Wisi\Stdlib\Module::getEnv() == 'development') {
-                                echo 'Exception : ' . $e->getMessage();
-                            } else {
-                                echo 'Une erreur est survenue, veuillez réessayez ultérieurement.';
-                            }
-                        } catch (\Wisi\Stdlib\ModuleException $e) {
+                        if (\Wisi\Stdlib\Module::getEnv() == 'development') {
+                            echo 'Exception : ' . $e->getMessage();
+                        } else {
                             echo 'Une erreur est survenue, veuillez réessayez ultérieurement.';
                         }
                         ?>

@@ -40,7 +40,7 @@
     </nav>
 </header>
 
-<div class="container" style="width: 1400px;">
+<div class="container-fluid" style="width: 1400px;">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <?= \Wisi\Stdlib\SessionManager::flashMessages(); ?>
