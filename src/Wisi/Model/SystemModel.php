@@ -66,9 +66,49 @@ class SystemModel extends ConnectionModel
     }
 
     /**
-     * @return array
+     * @return int
      */
     public function selectUCUtilisation()
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            return 0;
+        }
+
+        $query = 'SELECT PCPROCUNTU FROM GFPSYSGES.SSYS02P0';
+
+        try {
+            if (!$stmt = $con->query($query)) {
+                $aErrorInfos = $con->errorInfo();
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+                return 0;
+            }
+
+            if (!$stmt->execute()) {
+                $aErrorInfos = $con->errorInfo();
+                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+                return 0;
+            }
+
+            $aResults = $stmt->fetchColumn();
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+
+            return 0;
+        }
+
+        return $aResults;
+    }
+
+    /**
+     * @return array
+     */
+    public function selectASPUtilisation()
     {
         $con = $this->getConnexion();
 
@@ -76,7 +116,7 @@ class SystemModel extends ConnectionModel
             return [];
         }
 
-        $query = 'SELECT PCPROCUNTU, PCSYSASPUS FROM GFPSYSGES.SSYS02P0';
+        $query = 'SELECT ASPNUMBER, SUM(DSKCAPTY) AS DSKCAPTY, SUM(DSKSTGAVA) AS DSKSTGAVA, SUM(DSKCAPTY - DSKSTGAVA) AS OCCUPATION FROM GFPSYSGES.SSYS05P0 GROUP BY ASPNUMBER';
 
         try {
             if (!$stmt = $con->query($query)) {

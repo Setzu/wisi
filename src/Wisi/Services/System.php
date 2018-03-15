@@ -35,21 +35,36 @@ class System extends SystemModel
     }
 
     /**
-     * @return array
+     * @return float
      */
     public function getUCUtilisation()
     {
-        $aUCUtilisation = parent::selectUCUtilisation();
+        $iUCUtilisation = parent::selectUCUtilisation();
 
-        if (is_array($aUCUtilisation) && array_key_exists(0, $aUCUtilisation)) {
-            $aUCUtilisation['sASPUtilisation'] = number_format($aUCUtilisation[0]['PCSYSASPUS'] / 10000, 2);
-            $aUCUtilisation['sCPUUtilisation'] = number_format($aUCUtilisation[0]['PCPROCUNTU'] / 10, 2);
-        } else {
-            return [];
+        if ($iUCUtilisation > 0) {
+            $iUCUtilisation = $iUCUtilisation / 10;
         }
 
-        return $aUCUtilisation;
+        return $iUCUtilisation;
     }
+
+    /**
+     * @return array
+     */
+    public function getASPUtilisation()
+    {
+        $aASPUtilisation = parent::selectASPUtilisation();
+        $aASPUtilisationFormated = [];
+
+        if (is_array($aASPUtilisation) && count($aASPUtilisation) > 0) {
+            foreach ($aASPUtilisation as $asp => $aValues) {
+                $aASPUtilisationFormated[$aValues['ASPNUMBER']] = number_format($aValues['OCCUPATION'] * 100 / $aValues['DSKCAPTY'], 2);
+            }
+        }
+
+        return $aASPUtilisationFormated;
+    }
+
 
     /**
      * @param $UCValue
