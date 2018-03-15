@@ -63,22 +63,11 @@ class AccueilController extends AbstractController
 
                 // On récupère la liste des jobs obligatoires dans le fichier SSYPR3P0 (uniquement présent sur la DEV)
                 $oJob = new Job();
-                $aRequiredJobs = $oJob->getRequiredJobsBySystem($aSystem['NMSYS']);
+                $aInactiveJobs = $oJob->getInactiveJobsBySystem($aSystem['NMSYS']);
 
                 // Ajout d'une alerte si l'un des job du fichier SSYPR3P0 n'a pas été trouvé dans SSYJBSP0
-                if (is_array($aRequiredJobs) && count($aRequiredJobs) > 0) {
-                    $oJob = new Job($aSystem);
-                    $aRunningJobs = $oJob->verifRequiredJobs($aRequiredJobs);
-
-                    if (is_array($aRunningJobs) && count($aRunningJobs) > 0) {
-                        foreach ($aRunningJobs as $k => $aJobs) {
-                            if (!$aJobs['isExist']) {
-                                $alert = 'Le job ' . $aJobs['job']['JOBNAME'] . " de l'utilisateur " . $aJobs['job']['USERNAME'] .
-                                    ' et du sous-système ' . $aJobs['job']['SUBSYSTEM'] . " n'a pas été trouvé dans le fichier SSYJBSP0";
-                                $this->addAlert($aSystem['NMSYS'], $aSystem['SYSNAME'], $k, $alert);
-                            }
-                        }
-                    }
+                if (is_array($aInactiveJobs) && count($aInactiveJobs) > 0) {
+                    $aMainInfos[$aSystem['NMSYS']]['ALERTES'] = $aInactiveJobs;
                 }
 
                 $aMainInfos[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
