@@ -61,6 +61,7 @@
                     <a href="/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
                 </div>
             </div>
+            <br>
             <div class="row" style="text-align: center">
                 <h3>Paramétrage de l'application</h3>
                 <br>
