@@ -61,12 +61,13 @@
                     <a href="/wisi/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
                 </div>
             </div>
+            <br>
             <div class="row" style="text-align: center">
                 <h3>Paramétrage de l'application</h3>
                 <br>
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <a href="/index/timer" class="btn btn-default btn-block btn-lg">Modifier le timer de rafraichissement</a>
+                    <a href="/wisi/accueil/timer" class="btn btn-default btn-block btn-lg">Modifier le timer de rafraichissement</a>
                 </div>
             </div>
         </div>

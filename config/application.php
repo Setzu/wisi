@@ -7,6 +7,9 @@
  */
 
 return [
+    'APPLICATION_ENV' => [
+        'production'
+    ],
     'jobs' => [
         'A' => 'ASJ',
         'B' => 'BCH',

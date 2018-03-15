@@ -9,10 +9,10 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3 cadre-form">
-        <a href="/index" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
+        <a href="/wisi/accueil" class="btn btn-default"><span class="glyphicon glyphicon-home">&nbsp;</span>Retour à l'accueil</a>
         <h3 class="title-form">Timer de rafraichissement</h3>
         <hr>
-        <form action="/index/timer" role="form" method="post" class="form-horizontal">
+        <form action="/wisi/accueil/timer" role="form" method="post" class="form-horizontal">
             <div class="form-group">
                 <label for="timer" class="col-sm-6 control-label">Timer (en secondes) :</label>
                 <div class="col-sm-2">

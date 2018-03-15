@@ -183,19 +183,19 @@ class AccueilController extends AbstractController
                 $aPostedData['timer'] > 90) {
                 $this->addFlashMessage('Le timer doit être supérieur à 10 secondes et inférieur à 90 secondes');
 
-                header('Location: /index/timer');
+                header('Location: /wisi/accueil/timer');
                 exit;
             }
 
             $oParamsService->updateTimerRefresh($aPostedData['timer']);
             $this->addFlashMessage('Le timer de rafraichissement a bien été mis à jour', false);
 
-            header('Location: /index');
+            header('Location: /wisi/accueil');
             exit;
         } else {
             $this->setVariables(['iTimer' => $oParamsService->getTimerRefresh()]);
 
-            return $this->render('index', 'timer');
+            return $this->render('accueil', 'timer');
         }
     }
 }
