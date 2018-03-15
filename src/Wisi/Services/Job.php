@@ -81,37 +81,17 @@ class Job extends JobModel
      */
     public function addJobFollow(array $aInfosJob)
     {
-        return parent::insertJobFollow($aInfosJob);
+        return parent::insertJobFollow(Utils::decodeUTF($aInfosJob));
     }
 
     /**
      * @param string $system
      * @return array
      */
-    public function getRequiredJobsBySystem($system)
+    public function getInactiveJobsBySystem($system)
     {
         $aRequiredJobs = $this->selectRequiredJobsBySystem($system);
 
         return $aRequiredJobs;
-    }
-
-    /**
-     * @param array $aRequiredJobs
-     * @return array
-     */
-    public function verifRequiredJobs(array $aRequiredJobs)
-    {
-        if (!is_array($aRequiredJobs) || count($aRequiredJobs) == 0) {
-            return [];
-        }
-
-        $aListRunningJobs = [];
-
-        foreach ($aRequiredJobs as $k => $aJobs) {
-            $aListRunningJobs[$k]['isExist'] = $this->isRunningJob($aJobs);
-            $aListRunningJobs[$k]['job'] = $aJobs;
-        }
-
-        return $aListRunningJobs;
     }
 }

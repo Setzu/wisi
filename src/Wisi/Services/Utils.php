@@ -14,8 +14,16 @@ use DateTime;
 class Utils
 {
 
-    public static function formatDateToEU($date)
+    /**
+     * @param string $date
+     * @return string
+     */
+    public static function formatDateToEU($date = '')
     {
+        if (empty($date)) {
+            return date('d/m/Y H:i:s');
+        }
+
         $oDate = DateTime::createFromFormat('Y-m-d-H.i.s', substr($date, 0, 19));
 
         if (!$oDate) {
@@ -27,4 +35,24 @@ class Utils
         return $oDate->format('d/m/Y H:i:s');
     }
 
+    /**
+     * @param $mData
+     * @return array|string
+     */
+    public static function decodeUTF($mData)
+    {
+        if (is_array($mData)) {
+            foreach ($mData as $k => $infos) {
+                if (is_string($infos)) {
+                    $aDecodedDatas[$k] = utf8_decode($infos);
+                }
+            }
+
+            return $aDecodedDatas;
+        } elseif (is_string($mData)) {
+            return utf8_decode($mData);
+        } else {
+            return $mData;
+        }
+    }
 }

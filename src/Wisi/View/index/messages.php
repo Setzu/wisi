@@ -67,13 +67,13 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h4>Messages QSYSOPR</h4>
+        <h4>Alertes & Messages QSYSOPR</h4>
 
         <table id="messages" class="table table-condensed">
             <thead>
             <tr>
                 <th>Système</th>
-                <th>ID</th>
+                <th>Sous-système / ID</th>
                 <th>Message</th>
                 <th>Date</th>
                 <th>Utilisateur</th>
@@ -84,6 +84,38 @@
             <tbody>
             <?php if (isset($this->aMainInfos) && is_array($this->aMainInfos) && count($this->aMainInfos) > 0) { ?>
                 <?php foreach ($this->aMainInfos as $system => $aInfos) { ?>
+                    <?php if (is_array($aInfos) && array_key_exists('ALERTES', $aInfos) && is_array($aInfos['ALERTES']) && count($aInfos['ALERTES']) > 0) { ?>
+                        <?php foreach ($aInfos['ALERTES'] as $v) { ?>
+                            <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
+                                <td class="detail"><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
+                                <td class="detail"><?= $v['SUBSYSTEM']; ?></td>
+                                <td class="detail"><?= 'Le job n\'a pas été trouvé dans le fichier SSYJBSP0'; ?></td>
+                                <td class="detail"><?= \Wisi\Services\Utils::formatDateToEU(); ?></td>
+                                <td class="detail"><?= utf8_encode($v['USERNAME']); ?></td>
+                                <td class="detail"><?= utf8_encode($v['JOBNAME']); ?></td>
+                                <td style="display: none;">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Type message</th>
+                                            <th>Sous-système</th>
+                                            <th>Message complémentaire</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><?= $v['MSGTYPE']; ?></td>
+                                            <td><?= $v['SUBSYSTEM']; ?></td>
+                                            <td><?= utf8_encode(trim($v['MSGTEXT1'])); ?></td>
+                                            <td><?= $v['JOBSTATUS']; ?></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        <? } ?>
+                    <? } ?>
                     <?php if (is_array($aInfos) && array_key_exists('MESSAGES', $aInfos) && is_array($aInfos['MESSAGES']) && count($aInfos['MESSAGES']) > 0) { ?>
                         <?php foreach ($aInfos['MESSAGES'] as $v) { ?>
                             <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
