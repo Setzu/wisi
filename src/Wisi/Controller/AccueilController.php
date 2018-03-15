@@ -14,6 +14,7 @@ use Wisi\Services\Job;
 use Wisi\Services\Message;
 use Wisi\Services\Params;
 use Wisi\Services\System;
+use Wisi\Stdlib\Router;
 
 class AccueilController extends AbstractController
 {
@@ -28,6 +29,10 @@ class AccueilController extends AbstractController
      */
     public function indexAction()
     {
+        $oServiceParams = new Params();
+
+        $this->setVariables(['iTimer' => $oServiceParams->getTimerRefresh()]);
+
         return $this->render();
     }
 
@@ -159,6 +164,38 @@ class AccueilController extends AbstractController
         } else {
             header('location: /wisi/accueil');
             exit;
+        }
+    }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function timerAction()
+    {
+        $oParamsService = new Params();
+
+        if (!empty($_POST)) {
+
+            $aPostedData = Router::getPostValues();
+
+            if (!isset($aPostedData['timer']) && !is_numeric($aPostedData['timer']) || $aPostedData['timer'] < 10 ||
+                $aPostedData['timer'] > 90) {
+                $this->addFlashMessage('Le timer doit être supérieur à 10 secondes et inférieur à 90 secondes');
+
+                header('Location: /index/timer');
+                exit;
+            }
+
+            $oParamsService->updateTimerRefresh($aPostedData['timer']);
+            $this->addFlashMessage('Le timer de rafraichissement a bien été mis à jour', false);
+
+            header('Location: /index');
+            exit;
+        } else {
+            $this->setVariables(['iTimer' => $oParamsService->getTimerRefresh()]);
+
+            return $this->render('index', 'timer');
         }
     }
 }

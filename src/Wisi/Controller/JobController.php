@@ -78,7 +78,8 @@ class JobController extends AbstractController
         }
 
         $this->setVariables(['aSystems' => $aSystemsList]);
-        $this->render('job', 'index');
+
+        return $this->render('job', 'index');
     }
 
 
@@ -117,6 +118,6 @@ class JobController extends AbstractController
         }
 
         $this->setVariables(['iJobs' => $oServiceParams->getQuantityJobsToDisplay()]);
-        $this->render('job', 'display');
+        return $this->render('job', 'display');
     }
 }

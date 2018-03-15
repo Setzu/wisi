@@ -41,8 +41,7 @@
             <div class="row" style="text-align: center">
                 <h3>Paramétrage des jobs</h3>
                 <br>
-                <div class="col-md-3">
-                </div>
+                <div class="col-md-3"></div>
                 <div class="col-md-3">
                     <a href="/wisi/job" class="btn btn-default btn-block btn-lg">Suivre un job</a>
                 </div>
@@ -54,13 +53,20 @@
             <div class="row" style="text-align: center">
                 <h3>Paramétrage des systèmes</h3>
                 <br>
-                <div class="col-md-3">
-                </div>
+                <div class="col-md-3"></div>
                 <div class="col-md-3">
                     <a href="/wisi/system" class="btn btn-default btn-block btn-lg">Ajouter un système</a>
                 </div>
                 <div class="col-md-3">
                     <a href="/wisi/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
+                </div>
+            </div>
+            <div class="row" style="text-align: center">
+                <h3>Paramétrage de l'application</h3>
+                <br>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <a href="/index/timer" class="btn btn-default btn-block btn-lg">Modifier le timer de rafraichissement</a>
                 </div>
             </div>
         </div>
@@ -84,6 +90,5 @@
 
         $(document).on('keypress click mousemove', function() { intvrefresh() });
         intvrefresh();
-
-    }(30));
+    }(<?php echo $this->iTimer; ?>));
 </script>

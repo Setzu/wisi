@@ -15,7 +15,7 @@ class ParamsModel extends ConnectionModel
 {
 
     /**
-     * Selection de tous les messages QSYSOPR excepté ceux concernant les imprimantes
+     * Récupère le nombre de jobs à afficher dans l'onglet Jobs
      *
      * @return int
      */
@@ -53,6 +53,46 @@ class ParamsModel extends ConnectionModel
     }
 
     /**
+     * Récupère le timer de rafraichissement de l'application
+     *
+     * @return int
+     */
+    public function selectTimerRefresh()
+    {
+        $con = $this->getConnexion();
+
+        if (!$con instanceof \PDO) {
+            return 0;
+        }
+
+        $query = 'SELECT TIMER_REFRESH FROM GFPSYSGES.SSYPR4P0 WHERE ID = :ID';
+
+        if (!$stmt = $con->prepare($query)) {
+            $aErrorInfos = $con->errorInfo();
+            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return 0;
+        }
+
+        $iId = 1;
+
+        try {
+            $stmt->bindParam(':ID', $iId);
+            $stmt->execute();
+            $iResult = $stmt->fetchColumn();
+            $stmt->closeCursor();
+        } catch (\PDOException $e) {
+            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+
+            return 0;
+        }
+
+        return $iResult;
+    }
+
+    /**
+     * Met à jour le nombre de jobs à afficher dans l'onglet Jobs
+
      * @param int $quantity
      * @return bool
      */
@@ -95,6 +135,8 @@ class ParamsModel extends ConnectionModel
     }
 
     /**
+     * Met à jour le timer de rafraichissement de l'application
+     *
      * @param int $timer
      * @return bool
      */
