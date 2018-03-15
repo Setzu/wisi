@@ -20,33 +20,33 @@
             </thead>
             <tbody>
             <?php if (isset($this->aMainInfos) && is_array($this->aMainInfos) && count($this->aMainInfos) > 0) { ?>
-                <?php foreach ($this->aMainInfos as $system => $aInfos) { ;?>
+                <?php foreach ($this->aMainInfos as $system => $aInfos) { ?>
                     <tr>
                         <td><?= $aInfos['SYSNAME']; ?></td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['UC']['sCPUUtilisation']); ?> progress-bar-striped"
-                                     role="progressbar" aria-valuenow="<?= $aInfos['UC']['sCPUUtilisation']; ?>" aria-valuemin="0" aria-valuemax="100"
-                                     style="color: #000000; width: <?= $aInfos['UC']['sCPUUtilisation']; ?>%">
-                                    <?= $aInfos['UC']['sCPUUtilisation']; ?>&nbsp;%
+                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['UC']); ?> progress-bar-striped"
+                                     role="progressbar" aria-valuenow="<?= $aInfos['UC']; ?>" aria-valuemin="0" aria-valuemax="100"
+                                     style="color: #000000; width: <?= $aInfos['UC']; ?>%">
+                                    <?= $aInfos['UC']; ?>&nbsp;%
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['UC']['sASPUtilisation']); ?> progress-bar-striped"
-                                     role="progressbar" aria-valuenow="<?= $aInfos['UC']['sASPUtilisation']; ?>" aria-valuemin="0" aria-valuemax="100"
-                                     style="color: #000000; width: <?= $aInfos['UC']['sASPUtilisation']; ?>%">
-                                    <?= $aInfos['UC']['sASPUtilisation']; ?>&nbsp;%
+                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['ASP'][1]); ?> progress-bar-striped"
+                                     role="progressbar" aria-valuenow="<?= $aInfos['ASP'][1]; ?>" aria-valuemin="0" aria-valuemax="100"
+                                     style="color: #000000; width: <?= $aInfos['ASP'][1]; ?>%">
+                                    <?= $aInfos['ASP'][1]; ?>&nbsp;%
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['UC']['sASPUtilisation']); ?> progress-bar-striped"
-                                     role="progressbar" aria-valuenow="<?= $aInfos['UC']['sASPUtilisation']; ?>" aria-valuemin="0" aria-valuemax="100"
-                                     style="color: #000000; width: <?= $aInfos['UC']['sASPUtilisation']; ?>%">
-                                    <?= $aInfos['UC']['sASPUtilisation']; ?>&nbsp;%
+                                <div class="progress-bar progress-bar-<?= \Wisi\Services\System::storageClassByUC($aInfos['ASP'][2]); ?> progress-bar-striped"
+                                     role="progressbar" aria-valuenow="<?= $aInfos['ASP'][2]; ?>" aria-valuemin="0" aria-valuemax="100"
+                                     style="color: #000000; width: <?= $aInfos['ASP'][2]; ?>%">
+                                    <?= $aInfos['ASP'][2]; ?>&nbsp;%
                                 </div>
                             </div>
                         </td>

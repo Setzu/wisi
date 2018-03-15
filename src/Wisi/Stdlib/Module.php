@@ -10,7 +10,7 @@ namespace Wisi\Stdlib;
 
 use Wisi\Stdlib\Exception\ModuleException;
 
-class Module
+abstract class Module
 {
     const APPLICATION_ENV = 'APPLICATION_ENV';
 

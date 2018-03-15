@@ -59,6 +59,8 @@ class AccueilController extends AbstractController
                 $aMainInfos[$aSystem['NMSYS']]['MESSAGES'] = $oMessage->getMessagesQSYSOPR();
                 $aMainInfos[$aSystem['NMSYS']]['UC'] = $oSystem->getUCUtilisation();
 
+                $aMainInfos[$aSystem['NMSYS']]['ASP'] = $oSystem->getASPUtilisation();
+
                 // On récupère la liste des jobs obligatoires dans le fichier SSYPR3P0 (uniquement présent sur la DEV)
                 $oJob = new Job();
                 $aRequiredJobs = $oJob->getRequiredJobsBySystem($aSystem['NMSYS']);
@@ -157,7 +159,6 @@ class AccueilController extends AbstractController
             }
 
             $this->setVariables(['aConnectionsList' => $aConnectionsList]);
-
             echo json_encode($aSystemStatus);
 
             return;
