@@ -95,8 +95,8 @@
                                 <td><?= utf8_encode($v['JOBNAME']); ?></td>
                                 <td style="display: none;"></td>
                             </tr>
-                        <? } ?>
-                    <? } ?>
+                        <?php } ?>
+                    <?php } ?>
                     <?php if (is_array($aInfos) && array_key_exists('MESSAGES', $aInfos) && is_array($aInfos['MESSAGES']) && count($aInfos['MESSAGES']) > 0) { ?>
                         <?php foreach ($aInfos['MESSAGES'] as $v) { ?>
                             <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
