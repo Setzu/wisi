@@ -144,6 +144,8 @@ class IndexController extends AbstractController
                 $aSystemStatus[$aSystem['NMSYS']]['status'] = $oSystem->getSystemStatus();
                 $aSystemStatus[$aSystem['NMSYS']]['NMSYS'] = $aSystem['NMSYS'];
                 $aSystemStatus[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
+                $aSystemStatus[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
+                $aSystemStatus[$aSystem['NMSYS']]['BORDER'] = $aSystem['BORDER'];
             }
 
             $this->setVariables(['aConnectionsList' => $aConnectionsList]);
