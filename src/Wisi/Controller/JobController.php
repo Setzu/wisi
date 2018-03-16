@@ -82,7 +82,6 @@ class JobController extends AbstractController
         return $this->render('job', 'index');
     }
 
-
     /**
      * Modifie la quantité de jobs à afficher dans l'onglet Jobs
      *

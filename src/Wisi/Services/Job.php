@@ -24,11 +24,6 @@ class Job extends JobModel
         parent::__construct($aSystemInfos);
     }
 
-    public function getRequiredJobs($system)
-    {
-        return parent::selectRequiredJobsBySystem($system);
-    }
-
     /**
      * Si la quantité est égale à 0, on récupère au moins un résultat
      *

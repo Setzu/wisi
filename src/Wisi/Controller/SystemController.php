@@ -47,7 +47,7 @@ class SystemController extends AbstractController
                 !isset($aPostedDatas['DBNAME'   ]) || strlen($aPostedDatas['DBNAME'   ]) > 20 ||
                 !isset($aPostedDatas['SYSPTY'   ]) || strlen($aPostedDatas['SYSPTY'   ]) > 2  ||
                 (isset($aPostedDatas['SYSTEMTYP']) && strlen($aPostedDatas['SYSTEMTYP']) > 3) ||
-                (isset($aPostedDatas['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 6)
+                (isset($aPostedDatas['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 7)
             ) {
                 $this->addFlashMessage("L'un des champs dépasse la longueur maximale autorisée ou n'a pas été renseigné.");
                 header('Location: /wisi/system');
@@ -144,7 +144,7 @@ class SystemController extends AbstractController
             if ((isset($aModif['SYSNAME'  ]) && strlen($aPostedDatas['SYSNAME'  ]) > 10) ||
                 (isset($aModif['SYSPTY'   ]) && strlen($aPostedDatas['SYSPTY'   ]) > 2 ) ||
                 (isset($aModif['SYSTEMTYP']) && strlen($aPostedDatas['SYSTEMTYP']) > 3 ) ||
-                (isset($aModif['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 6 )
+                (isset($aModif['COLOR'    ]) && strlen($aPostedDatas['COLOR'    ]) > 7 )
             ) {
                 $this->addFlashMessage("L'un des champs dépasse la longueur maximale autorisée");
 

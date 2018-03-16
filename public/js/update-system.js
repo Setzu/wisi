@@ -15,7 +15,6 @@ $(function() {
                 $('#system-type').val(data.SYSTEMTYP);
                 $('#system-priority').val(data.SYSPTY);
                 $('#system-color').val(data.COLOR);
-                $('div#color').css('background-color', '#' + $('#system-color').val());
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 //alert('error');

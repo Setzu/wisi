@@ -86,8 +86,8 @@
                 <?php foreach ($this->aMainInfos as $system => $aInfos) { ?>
                     <?php if (is_array($aInfos) && array_key_exists('ALERTES', $aInfos) && is_array($aInfos['ALERTES']) && count($aInfos['ALERTES']) > 0) { ?>
                         <?php foreach ($aInfos['ALERTES'] as $v) { ?>
-                            <tr style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
-                                <td><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
+                            <tr style="background-color: <?= $aInfos['COLOR']; ?>">
+                                <td><span style="color: <?= $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
                                 <td><?= $v['SUBSYSTEM']; ?></td>
                                 <td><?= 'Le job n\'a pas été trouvé dans le fichier SSYJBSP0'; ?></td>
                                 <td><?= \Wisi\Services\Utils::formatDateToEU(); ?></td>
@@ -99,8 +99,8 @@
                     <?php } ?>
                     <?php if (is_array($aInfos) && array_key_exists('MESSAGES', $aInfos) && is_array($aInfos['MESSAGES']) && count($aInfos['MESSAGES']) > 0) { ?>
                         <?php foreach ($aInfos['MESSAGES'] as $v) { ?>
-                            <tr class="pointer" style="background-color: <?= '#' . $aInfos['COLOR']; ?>">
-                                <td class="detail"><span style="color: <?= '#' . $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
+                            <tr class="pointer" style="background-color: <?= $aInfos['COLOR']; ?>">
+                                <td class="detail"><span style="color: <?= $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
                                 <td class="detail"><?= $v['MSGID']; ?></td>
                                 <td class="detail"><?= utf8_encode($v['MSGTEXT']); ?></td>
                                 <td class="detail"><?= \Wisi\Services\Utils::formatDateToEU($v['MESSAGESTP']); ?></td>
