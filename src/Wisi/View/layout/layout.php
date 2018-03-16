@@ -23,7 +23,7 @@
     <!-- JS -->
     <script type="text/javascript" src="<?= '/js/lib/jquery-3.3.1.min.js'; ?>"></script>
     <script type="text/javascript" src="<?= '/js/lib/jquery-ui.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?= '/js/lib/jquery.canvasjs.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?= '/js/lib/chart.min.js'; ?>"></script>
     <script type="text/javascript" src="<?= '/js/lib/jquery-dataTables.min.js'; ?>"></script>
 </head>
 

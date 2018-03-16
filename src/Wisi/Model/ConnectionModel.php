@@ -253,7 +253,7 @@ class ConnectionModel
             return [];
         }
 
-        $query = 'SELECT NMSYS, SYSNAME, IPADR, NMUSR, PWUSR, DBNAME, SYSTEMTYP, COLOR, SYSPTY FROM GFPSYSGES.SSYPR1P0 ORDER BY SYSPTY ASC';
+        $query = 'SELECT NMSYS, SYSNAME, IPADR, NMUSR, PWUSR, DBNAME, SYSTEMTYP, COLOR, SYSPTY, BORDER FROM GFPSYSGES.SSYPR1P0 ORDER BY SYSPTY ASC';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
