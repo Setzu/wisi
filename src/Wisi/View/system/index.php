@@ -74,11 +74,7 @@
             <div class="form-group">
                 <label for="COLOR" class="col-sm-4 control-label">Couleur :</label>
                 <div class="col-sm-4">
-                    <div class="input-group">
-                        <div class="input-group-addon">#</div>
-                        <input id="system-color" type="text" name="COLOR" value="FFFFFF" maxlength="6" class="form-control">
-                        <div class="input-group-addon" id="color">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                    </div>
+                    <input id="system-color" type="color" name="COLOR" value="#FFFFFF">
                 </div>
             </div>
             <span style="color: #a94442; float: left;">*&nbsp;</span>
