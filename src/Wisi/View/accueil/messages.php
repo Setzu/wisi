@@ -59,7 +59,8 @@
 
     <!-- Etat des systèmes -->
     <div class="col-md-6">
-        <div id="chartContainer" style="height: 280px; width: 100%;"></div>
+        <h4>Etat des systèmes</h4>
+        <canvas id="myChart" style="width: 100%; height: 250px;"></canvas>
     </div>
 </div>
 
