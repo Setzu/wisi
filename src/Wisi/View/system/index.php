@@ -74,7 +74,7 @@
             <div class="form-group">
                 <label for="COLOR" class="col-sm-4 control-label">Couleur :</label>
                 <div class="col-sm-4">
-                    <input id="system-color" type="color" name="COLOR" value="#FFFFFF">
+                    <input id="system-color" type="color" name="COLOR" value="#FFFFFF" style="width: 100%; height: 35px;">
                 </div>
             </div>
             <span style="color: #a94442; float: left;">*&nbsp;</span>

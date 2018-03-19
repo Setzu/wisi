@@ -32,10 +32,21 @@
 <header>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index" style="float: left; padding-top: 5px;">
-                <img src="/img/gfp_logo.png" alt="logo gfp">
-            </a>
-            <?= '<h4 class="header-date">' . date('d/m/Y H:i:s') . '</h4>';?>
+            <div class="row">
+                <div class="col-md-1">
+                    <a class="navbar-brand" href="/index" style="padding-top: 5px;">
+                        <img src="/img/gfp_logo.png" alt="logo gfp">
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <?= '<h4 class="header-date">' . date('d/m/Y H:i:s') . '</h4>';?>
+                </div>
+                <div class="col-md-1">
+                    <h1 style="margin: 5px 0 0 0;">
+                        <span id="timer"></span>
+                    </h1>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
