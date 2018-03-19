@@ -10,7 +10,6 @@ $(function() {
             var ctx = document.getElementById("myChart").getContext('2d');
             var _datasets = [];
             $.each(data, function(index, element) {
-                console.log(element);
                 $.each(element.status, function(k, v) {
                     _datasets.push({
                         label: element.SYSNAME,
