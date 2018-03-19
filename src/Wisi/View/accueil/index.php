@@ -80,16 +80,29 @@
 
 <!-- Rafraîchissement de la page si inictivité pendant 30 secondes-->
 <script type="text/javascript">
-    $(function(seconds) {
-        var refresh,
-            intvrefresh = function() {
-                clearInterval(refresh);
-                refresh = setTimeout(function() {
-                    location.href = location.href;
-                }, seconds * 1000);
-            };
+        $(function (seconds) {
+            var _timer = seconds -1;
 
-        $(document).on('keypress click mousemove', function() { intvrefresh() });
-        intvrefresh();
-    }(<?php echo $this->iTimer; ?>));
+            var refresh,
+                intvrefresh = function () {
+                    clearInterval(refresh);
+                    refresh = setTimeout(function () {
+                        location.href = location.href;
+                    }, seconds * 1000);
+                };
+
+            $(document).on('keypress click mousemove', function () {
+                intvrefresh();
+                _timer = seconds -1;
+            });
+
+            intvrefresh();
+
+            function Timer() {
+                $('#timer').text(_timer --);
+            }
+
+            setInterval(Timer, 1000);
+
+        }(<?php echo $this->iTimer; ?>));
 </script>
