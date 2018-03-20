@@ -45,7 +45,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return [];
         }
@@ -59,7 +59,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return [];
         }
@@ -83,7 +83,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return false;
         }
@@ -96,7 +96,7 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
             $stmt->execute();
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return false;
         }
@@ -125,7 +125,7 @@ AND SUBSYSTEM = PR3.SUBSYSTEM AND JOBUSER = PR3.USERNAME
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return [];
         }
@@ -136,7 +136,7 @@ AND SUBSYSTEM = PR3.SUBSYSTEM AND JOBUSER = PR3.USERNAME
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return [];
         }
@@ -161,7 +161,7 @@ WHERE NMSYS = :NMSYS AND SUBSYSTEM = :SUBSYSTEM AND JOBNAME = :JOBNAME AND JOBUS
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return false;
         }
@@ -175,7 +175,7 @@ WHERE NMSYS = :NMSYS AND SUBSYSTEM = :SUBSYSTEM AND JOBNAME = :JOBNAME AND JOBUS
             $bExists = (bool) $stmt->fetch(\PDO::FETCH_COLUMN);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return false;
         }

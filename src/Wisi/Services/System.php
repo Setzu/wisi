@@ -91,7 +91,7 @@ class System extends SystemModel
     public function getInfosSystemByName($sSystemName)
     {
         if (!is_string($sSystemName) || empty($sSystemName)) {
-            Logs::add('Le paramètre doit être une chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), 'Le paramètre doit être une chaine de caractère', __FILE__, __LINE__);
             return [];
         }
 
@@ -116,7 +116,7 @@ class System extends SystemModel
     public function deleteSystemByName($sSystemName)
     {
         if (!is_string($sSystemName) || empty($sSystemName)) {
-            Logs::add('Le paramètre doit être un chaine de caractère. Voir ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), 'Le paramètre doit être un chaine de caractère', __FILE__, __LINE__);
 
             return [];
         }
