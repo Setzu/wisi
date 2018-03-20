@@ -43,7 +43,7 @@ class MessageModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return [];
         }
@@ -56,7 +56,7 @@ class MessageModel extends ConnectionModel
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return [];
         }

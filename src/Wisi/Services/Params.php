@@ -47,7 +47,7 @@ class Params extends ParamsModel
         $iQuantity = (int) $quantity;
 
         if ($iQuantity === 0) {
-            Logs::add('La quantité de jobs à afficher doit être supérieur à 0 in ' . __FILE__ . ' at line ' .__LINE__);
+            Logs::add($this->getHost(), 'La quantité de jobs à afficher doit être supérieur à 0', __FILE__,__LINE__);
 
             return false;
         }
@@ -64,7 +64,7 @@ class Params extends ParamsModel
         $iTimer = (int) $timer;
 
         if ($iTimer === 0) {
-            Logs::add('Le timer ne peut pas être inférieur à 0 seconde. Timer renseigné : ' . $iTimer . ' in ' . __FILE__ . ' at line ' .__LINE__);
+            Logs::add($this->getHost(), 'Le timer ne peut pas être inférieur à 0 seconde. Timer renseigné : ' . $iTimer, __FILE__, __LINE__);
 
             return false;
         }

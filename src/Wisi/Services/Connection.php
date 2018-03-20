@@ -35,7 +35,7 @@ class Connection extends ConnectionModel
         $iPriority = (int) $aSystemInfos['SYSPTY'];
 
         if ($iPriority == 0) {
-            Logs::add('La priorité doit être supérieur à 0. ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($aSystemInfos['NMSYS'], 'La priorité doit être supérieur à 0', __FILE__ , __LINE__);
 
             return false;
         }

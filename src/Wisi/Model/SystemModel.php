@@ -42,14 +42,14 @@ class SystemModel extends ConnectionModel
         try {
             if (!$stmt = $con->query($query)) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return [];
             }
@@ -57,7 +57,7 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
             return [];
         }
@@ -81,14 +81,14 @@ class SystemModel extends ConnectionModel
         try {
             if (!$stmt = $con->query($query)) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return 0;
             }
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return 0;
             }
@@ -96,7 +96,7 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetchColumn();
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
 
             return 0;
@@ -121,14 +121,14 @@ class SystemModel extends ConnectionModel
         try {
             if (!$stmt = $con->query($query)) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return [];
             }
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return [];
             }
@@ -136,7 +136,7 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
 
             return [];
@@ -161,7 +161,7 @@ class SystemModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return false;
         }
@@ -171,7 +171,7 @@ class SystemModel extends ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return false;
             }
@@ -179,7 +179,7 @@ class SystemModel extends ConnectionModel
             $aResults = $stmt->fetch(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
 
             return false;
@@ -200,7 +200,7 @@ class SystemModel extends ConnectionModel
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
-            Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
             return false;
         }
@@ -210,14 +210,14 @@ class SystemModel extends ConnectionModel
 
             if (!$stmt->execute()) {
                 $aErrorInfos = $con->errorInfo();
-                Logs::add('Host ' . $this->getHost() . ' ' . $aErrorInfos[2] . ' in ' . __FILE__ . ' at line ' . __LINE__);
+                Logs::add($this->getHost(), $aErrorInfos[2], __FILE__, __LINE__);
 
                 return false;
             }
 
             $stmt->closeCursor();
         } catch (\PDOException $e) {
-            Logs::add($e->getMessage() . ' in ' . __FILE__ . ' at line ' . __LINE__);
+            Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
 
             return false;
