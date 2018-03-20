@@ -130,8 +130,13 @@ class ConnectionModel
     {
         $this->connexion = '';
 
-        $sConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
+        // Impossible de récupérer à chaque fois tous les systèmes avec ce profil
+        $this->test = $sConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
             $this->getHost() . ';PROTOCOL=TCPIP;UID=' . $this->getUser() . ';PWD=' . $this->getPassword() . ';NAM=1;';
+
+        // Aucun problème avec mon profil AS400
+//        $sConnectionParams = 'odbc:DRIVER={IBM i Access ODBC Driver};DATABASE=' . $this->getDatabase() . ';SYSTEM=' .
+//            $this->getHost() . ';PROTOCOL=TCPIP;UID=QPGMRDB;PWD=QPGMRDB;NAM=1;';
 
         try {
             // Limitation à quelques secondes pour éviter les timeout

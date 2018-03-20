@@ -78,7 +78,7 @@
 <script type="text/javascript" src="<?= '/wisi/js/load-messages.js'; ?>"></script>
 <script type="text/javascript" src="<?= '/wisi/js/load-jobs.js'; ?>"></script>
 
-<!-- Rafraîchissement de la page si inictivité pendant N secondes-->
+<!-- Rafraîchissement de la page si inactivité pendant N secondes-->
 <script type="text/javascript">
         $(function (seconds) {
             var _timer = seconds -1;
