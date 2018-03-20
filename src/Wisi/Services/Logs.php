@@ -80,7 +80,7 @@ class Logs
             $query = 'INSERT INTO GFPSYSGES.SSYLOGP0 (SYSTEM, MSGLOG, PHPFILE, PHPLINE) VALUES (:SYSTEM, :MSGLOG, :PHPFILE, :PHPLINE)';
 
             if (!$stmt = $con->prepare($query)) {
-//                $con->errorInfo();
+//                die($con->errorInfo());
 
                 return false;
             }
@@ -93,7 +93,7 @@ class Logs
                 $stmt->execute();
                 $stmt->closeCursor();
             } catch (\PDOException $e) {
-//                $e->getMessage();
+//                die($e->getMessage());
 
                 return false;
             }
@@ -101,7 +101,7 @@ class Logs
             return true;
 
         } catch (\PDOException $e) {
-//            $e->getMessage();
+//            die($e->getMessage());
 
             return false;
         }
