@@ -13,6 +13,7 @@ error_reporting(E_ALL);
 
 $loader = require_once __DIR__ . '/../vendor/autoload.php';
 
+// On vérifie que l'utilisateur est bien authentifié, sinon on le redirige
 if (!isset($_COOKIE['user'])) {
     header('Location: /');
     exit;

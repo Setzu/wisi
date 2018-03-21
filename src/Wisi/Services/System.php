@@ -65,6 +65,20 @@ class System extends SystemModel
         return $aASPUtilisationFormated;
     }
 
+    public function getASPStorage()
+    {
+        $aASPStorage = parent::selectASPUtilisation();
+
+        if (is_array($aASPStorage) && count($aASPStorage) > 0) {
+            foreach ($aASPStorage as $asp => $aValues) {
+                $aASPStorage[$asp]['DSKCAPTY'] = number_format($aValues['DSKCAPTY'] / 1000, 0, ',', '');
+                $aASPStorage[$asp]['DSKSTGAVA'] = number_format($aValues['DSKSTGAVA'] / 1000, 0, ',', '');
+                $aASPStorage[$asp]['TOTAL'] = $aASPStorage[$asp]['DSKCAPTY'] + $aASPStorage[$asp]['DSKSTGAVA'];
+            }
+        }
+
+        return $aASPStorage;
+    }
 
     /**
      * @param $UCValue
