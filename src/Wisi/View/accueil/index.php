@@ -35,10 +35,14 @@
                 <br>
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <a href="/wisi/job" class="btn btn-default btn-block btn-lg">Suivre un job</a>
+                    <a href="/wisi/job" class="btn btn-success btn-block btn-lg">
+                        <span class="glyphicon glyphicon-eye-open">&nbsp;</span>Suivre un job
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="/wisi/job/display" class="btn btn-default btn-block btn-lg">Affichage des jobs</a>
+                    <a href="/wisi/job/display" class="btn btn-success btn-block btn-lg">
+                        <span class="glyphicon glyphicon-th-list">&nbsp;</span>Affichage des jobs
+                    </a>
                 </div>
             </div>
             <br>
@@ -47,10 +51,14 @@
                 <br>
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <a href="/wisi/system" class="btn btn-default btn-block btn-lg">Ajouter un système</a>
+                    <a href="/wisi/system" class="btn btn-success btn-block btn-lg">
+                        <span class="glyphicon glyphicon-plus">&nbsp;</span>Ajouter un système
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="/wisi/system/update" class="btn btn-default btn-block btn-lg">Modifier un système</a>
+                    <a href="/wisi/system/update" class="btn btn-success btn-block btn-lg">
+                        <span class="glyphicon glyphicon-pencil">&nbsp;</span>Modifier un système
+                    </a>
                 </div>
             </div>
             <br>
@@ -59,7 +67,9 @@
                 <br>
                 <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <a href="/wisi/accueil/timer" class="btn btn-default btn-block btn-lg">Modifier le timer de rafraichissement</a>
+                    <a href="/wisi/index/timer" class="btn btn-success btn-block btn-lg">
+                        <span class="glyphicon glyphicon-time">&nbsp;</span>Modifier le cycle d'actualisation
+                    </a>
                 </div>
             </div>
         </div>

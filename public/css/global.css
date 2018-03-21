@@ -45,3 +45,6 @@ li.tab-alert > a {
 li.ui-tabs-active > a:hover {
     cursor: pointer !important;
 }
+.btn-lg {
+    color: #FFFFFF !important;
+}
