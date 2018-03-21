@@ -8,10 +8,9 @@
 ?>
 
 <div class="row">
+    <h4 style="text-align: center;">Liste des jobs</h4>
     <div class="col-md-12">
         <?php if (isset($this->aJobs) && is_array($this->aJobs)) { ?>
-            <h4>Liste des jobs</h4>
-
             <table id="jobs" class="table table-condensed">
                 <thead>
                 <tr>

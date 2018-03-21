@@ -50,7 +50,7 @@ class IndexController extends AbstractController
         if (!empty($_POST)) {
             $oConnectionService = new Connection();
             $aConnectionsList = $oConnectionService->getAllConnections();
-            $aMainInfos = $aPing = [];
+            $aMainInfos = [];
 
             // On récupère les messages QSYSOPR ainsi que les infos sur l'utilisation des disques et de l'UC pour chaques systèmes
             foreach ($aConnectionsList as $aSystem) {
@@ -152,6 +152,37 @@ class IndexController extends AbstractController
             echo json_encode($aSystemStatus);
 
             return;
+        } else {
+            header('location: /index');
+            exit;
+        }
+    }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function informationsAction()
+    {
+        if (!empty($_POST)) {
+            $oConnectionService = new Connection();
+            $aConnectionsList = $oConnectionService->getAllConnections();
+            $aInformations = [];
+
+            // On récupère les informations de chaque système
+            foreach ($aConnectionsList as $aSystem) {
+                $oSystem = new System($aSystem);
+                $aInformations[$aSystem['NMSYS']]['ASP'] = $oSystem->getASPStorage();
+                $aInformations[$aSystem['NMSYS']]['COLOR'] = $aSystem['COLOR'];
+                $aInformations[$aSystem['NMSYS']]['SYSNAME'] = $aSystem['SYSNAME'];
+                $aInformations[$aSystem['NMSYS']]['SYSPTY'] = $aSystem['SYSPTY'];
+            }
+
+            $this->setVariables([
+                'aInfos' => $aInformations
+            ]);
+
+            return require_once __DIR__ . '/../View/index/informations.php';
         } else {
             header('location: /index');
             exit;

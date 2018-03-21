@@ -12,11 +12,7 @@
         <ul>
             <li><a id="link-tab1" href="#tabs-1">GFP Power - Main</a></li>
             <li><a id="link-tab2" href="#tabs-2">GFP Power - Jobs</a></li>
-            <?php if (isset($_SESSION['alerts']) && is_array($_SESSION['alerts'])) { ?>
-                <li class="tab-alert">
-                    <a id="alert" href="#tabs-3"><?= $_SESSION['alerts']['count']; ?>&nbsp;Alertes</a>
-                </li>
-            <?php } ?>
+            <li><a id="link-tab3" href="#tabs-3">GFP Power - Informations</a></li>
             <li><a href="#tabs-4">Paramétrage</a></li>
         </ul>
         <!-- Contenu chargé en ajax (messages.php)-->
@@ -31,12 +27,8 @@
             <img src="<?= '/img/ajax-loader.gif'; ?>" alt="loader">
         </span>
         </div>
-        <?php if (isset($_SESSION['alerts']) && is_array($_SESSION['alerts'])) { ?>
-            <div id="tabs-3">
-                <h4>Liste des alertes</h4>
-                <?= \Wisi\Stdlib\SessionManager::alerts(); ?>
-            </div>
-        <?php } ?>
+        <!-- Contenu chargé en ajax (informations.php)-->
+        <div id="tabs-3"></div>
         <div id="tabs-4">
             <div class="row" style="text-align: center">
                 <h3>Paramétrage des jobs</h3>
@@ -77,6 +69,7 @@
 <script type="text/javascript" src="<?= '/js/tab.js'; ?>"></script>
 <script type="text/javascript" src="<?= '/js/load-messages.js'; ?>"></script>
 <script type="text/javascript" src="<?= '/js/load-jobs.js'; ?>"></script>
+<script type="text/javascript" src="<?= '/js/load-informations.js'; ?>"></script>
 
 <!-- Rafraîchissement de la page si inactivité pendant N secondes-->
 <script type="text/javascript">
