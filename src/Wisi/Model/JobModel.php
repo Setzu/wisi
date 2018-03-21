@@ -15,7 +15,8 @@ class JobModel extends ConnectionModel
 {
 
     const DEFAULT_STATUS = '*ACTIVE';
-    const DEFAULT_USER = 'QSYS';
+    const QSYS_USER = 'QSYS';
+    const PMSOFT_USER = 'PMSOFTICF';
 
     /**
      * TestModel constructor.
@@ -41,7 +42,7 @@ class JobModel extends ConnectionModel
         $iQuantity = (int) $quantity;
 
         $query = 'SELECT NMSYS, JOBNAME, JOBUSER, JOBNUMBER, JOBTYPE, JOBSUBTYPE, SUBSYSTEM, ACTJOBSTS, PROCESSUNT
-FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORDER BY PROCESSUNT DESC FETCH FIRST ' . $iQuantity . ' ROWS ONLY';
+FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :QSYSUSER AND JOBUSER != :PMSOFTUSER ORDER BY PROCESSUNT DESC FETCH FIRST ' . $iQuantity . ' ROWS ONLY';
 
         if (!$stmt = $con->prepare($query)) {
             $aErrorInfos = $con->errorInfo();
@@ -52,9 +53,11 @@ FROM GFPSYSGES.SSYJBSP0 WHERE JOBSTATUS = :JOBSTATUS AND JOBUSER != :JOBUSER ORD
 
         try {
             $sStatus = self::DEFAULT_STATUS;
-            $sUser = self::DEFAULT_USER;
+            $sQSYSUser = self::QSYS_USER;
+            $sPMSOFTUser = self::PMSOFT_USER;
             $stmt->bindParam(':JOBSTATUS', $sStatus);
-            $stmt->bindParam(':JOBUSER', $sUser);
+            $stmt->bindParam(':QSYSUSER', $sQSYSUser);
+            $stmt->bindParam(':PMSOFTUSER', $sPMSOFTUser);
             $stmt->execute();
             $aResult = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             $stmt->closeCursor();
