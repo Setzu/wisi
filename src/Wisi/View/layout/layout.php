@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1">
-                    <a class="navbar-brand" href="/index" style="padding-top: 5px;">
+                    <a class="navbar-brand" href="https://outils-gfp.gfp2000.com/" style="padding-top: 5px;">
                         <img src="/img/gfp_logo.png" alt="logo gfp">
                     </a>
                 </div>
@@ -45,6 +45,12 @@
                     <h1 style="margin: 5px 0 0 0;">
                         <span id="timer"></span>
                     </h1>
+                </div>
+                <div class="col-md-2 col-md-offset-6">
+                    <h4 style="display: inline-block;">
+                        <?= $_COOKIE['user']; ?>
+                        <a href="https://outils-gfp.gfp2000.com/index.php?action=deconnexion" class="glyphicon glyphicon-off" style="text-decoration: none;"></a>
+                    </h4>
                 </div>
             </div>
         </div>
