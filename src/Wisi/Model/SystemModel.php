@@ -98,7 +98,6 @@ class SystemModel extends ConnectionModel
         } catch (\PDOException $e) {
             Logs::add($this->getHost(), $e->getMessage(), __FILE__, __LINE__);
 
-
             return 0;
         }
 

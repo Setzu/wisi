@@ -29,9 +29,9 @@
                             <tr style="background-color: <?= $aInfos['COLOR']; ?>">
                                 <td><span style="color: <?= $aInfos['COLOR']; ?>"><?= $aInfos['SYSPTY']; ?></span><?= $aInfos['SYSNAME']; ?></td>
                                 <td><?= $v['ASPNUMBER']; ?></td>
-                                <td><?= $v['DSKCAPTY'] . ' Go'; ?></td>
                                 <td><?= $v['DSKSTGAVA'] . ' Go'; ?></td>
-                                <td><?= $v['TOTAL'] . ' Go'; ?></td>
+                                <td><?= $v['USED'] . ' Go'; ?></td>
+                                <td><?= $v['DSKCAPTY'] . ' Go'; ?></td>
                             </tr>
                         <?php } ?>
                     <?php } ?>

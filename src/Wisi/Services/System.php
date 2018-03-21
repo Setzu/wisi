@@ -65,6 +65,9 @@ class System extends SystemModel
         return $aASPUtilisationFormated;
     }
 
+    /**
+     * @return array
+     */
     public function getASPStorage()
     {
         $aASPStorage = parent::selectASPUtilisation();
@@ -73,7 +76,7 @@ class System extends SystemModel
             foreach ($aASPStorage as $asp => $aValues) {
                 $aASPStorage[$asp]['DSKCAPTY'] = number_format($aValues['DSKCAPTY'] / 1000, 0, ',', '');
                 $aASPStorage[$asp]['DSKSTGAVA'] = number_format($aValues['DSKSTGAVA'] / 1000, 0, ',', '');
-                $aASPStorage[$asp]['TOTAL'] = $aASPStorage[$asp]['DSKCAPTY'] + $aASPStorage[$asp]['DSKSTGAVA'];
+                $aASPStorage[$asp]['USED'] = $aASPStorage[$asp]['DSKCAPTY'] - $aASPStorage[$asp]['DSKSTGAVA'];
             }
         }
 
@@ -81,7 +84,7 @@ class System extends SystemModel
     }
 
     /**
-     * @param $UCValue
+     * @param int $UCValue
      * @return string
      */
     public static function storageClassByUC($UCValue)
@@ -127,6 +130,10 @@ class System extends SystemModel
         return parent::updateSystem($aInfosSystem);
     }
 
+    /**
+     * @param string $sSystemName
+     * @return array|bool
+     */
     public function deleteSystemByName($sSystemName)
     {
         if (!is_string($sSystemName) || empty($sSystemName)) {
