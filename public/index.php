@@ -13,6 +13,11 @@ error_reporting(E_ALL);
 
 $loader = require_once __DIR__ . '/../vendor/autoload.php';
 
+if (!isset($_COOKIE['user'])) {
+    header('Location: /');
+    exit;
+}
+
 try {
     try {
         \Wisi\Stdlib\Router::dispatch();
