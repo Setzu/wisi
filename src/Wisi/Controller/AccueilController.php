@@ -182,7 +182,7 @@ class AccueilController extends AbstractController
                 'aInfos' => $aInformations
             ]);
 
-            return require_once __DIR__ . '/../View/index/informations.php';
+            return require_once __DIR__ . '/../View/accueil/informations.php';
         } else {
             header('location: /index');
             exit;

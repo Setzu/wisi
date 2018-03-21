@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="row" style="box-shadow: 5px 5px 15px #888888;">
+<div class="row">
     <div id="tabs">
         <ul>
             <li><a id="link-tab1" href="#tabs-1">GFP Power - Main</a></li>
